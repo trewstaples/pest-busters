@@ -1,0 +1,35 @@
+.header__screen,
+.header__container {
+  min-height: 80px;
+}
+
+.header__wrap {
+  margin: 10px 0 10px;
+  gap: 80px;
+  border: 1px solid orange;
+}
+
+.header-logo {
+  width: 122px; /* ! заменить на max-width */
+  height: 60px; /* ! заменить на max-height */
+  text-align: center;
+  border: 1px solid blue;
+}
+
+.menu-list {
+  margin: 0 0 0 80px;
+  gap: 20px;
+}
+
+.menu-list__item {
+  width: 122px; /* ! заменить на max-width */
+  height: 60px; /* ! заменить на max-height */
+  text-align: center;
+  border: 1px solid black;
+}
+
+.header-callback {
+  width: 122px; /* ! заменить на max-width */
+  height: 60px; /* ! заменить на max-height */
+  border: 1px solid black;
+}
