@@ -31,5 +31,6 @@
 .header-callback {
   width: 122px; /* ! заменить на max-width */
   height: 60px; /* ! заменить на max-height */
+  text-align: center;
   border: 1px solid black;
 }
