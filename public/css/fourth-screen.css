@@ -1,0 +1,7 @@
+.individuals {
+  width: 1312px; /* ! заменить на max-width */
+  height: 700px; /* ! заменить на max-height */
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}

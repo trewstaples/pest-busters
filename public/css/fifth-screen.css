@@ -1,0 +1,43 @@
+.fifth-screen {
+  width: 1312px; /* ! заменить на max-width */
+  height: 700px; /* ! заменить на max-height */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.reviews {
+  width: 656px; /* ! заменить на max-width */
+  height: 300px; /* ! заменить на max-height */
+  flex-direction: column;
+  border: 1px solid blue;
+}
+
+.reviews-list {
+  flex-direction: column;
+}
+
+.reviews-list__item {
+  width: 656px; /* ! заменить на max-width */
+  height: 100px; /* ! заменить на max-height */
+  border: 1px solid blue;
+}
+
+.portfolio {
+  margin: 50px 0 0 0;
+  width: 1300px; /* ! заменить на max-width */
+  height: 300px; /* ! заменить на max-height */
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-list {
+  border: 1px solid red;
+}
+
+.portfolio-list__item {
+  width: 300px; /* ! заменить на max-width */
+  height: 300px; /* ! заменить на max-height */
+  border: 1px solid red;
+}

@@ -1,0 +1,26 @@
+.footer__screen,
+.footer__container {
+  min-height: 400px; /* ! заменить на max-height */
+}
+
+.footer__wrap {
+  width: 1312px; /* ! заменить на max-width */
+  min-height: 400px; /* ! заменить на max-height */
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.footer-logo {
+  width: 122px; /* ! заменить на max-width */
+  height: 60px; /* ! заменить на max-height */
+  text-align: center;
+  border: 1px solid blue;
+}
+
+.footer__item {
+  width: 200px; /* ! заменить на max-height */
+  height: 150px; /* ! заменить на max-height */
+  border: 1px solid blue;
+}
