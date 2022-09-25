@@ -4,16 +4,23 @@
 }
 
 .header__wrap {
+  display: flex;
+  align-items: center;
+
   margin: 10px 0 10px;
   gap: 80px;
   border: 1px solid orange;
 }
 
 .header-logo {
-  width: 122px; /* ! заменить на max-width */
-  height: 60px; /* ! заменить на max-height */
-  text-align: center;
-  border: 1px solid blue;
+  max-width: 70px;
+  max-height: 70px;
+  margin-left: 20px;
+}
+
+.header-logo__image {
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .menu-list {
@@ -22,15 +29,26 @@
 }
 
 .menu-list__item {
-  width: 122px; /* ! заменить на max-width */
-  height: 60px; /* ! заменить на max-height */
-  text-align: center;
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 97px;
+  min-height: 30px;
+
+  font-size: 16px;
+
+  color: #013068;
 }
 
 .header-callback {
-  width: 122px; /* ! заменить на max-width */
-  height: 60px; /* ! заменить на max-height */
-  text-align: center;
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 124px;
+  min-height: 60px;
+  font-size: 16px;
+
+  color: #013068;
 }

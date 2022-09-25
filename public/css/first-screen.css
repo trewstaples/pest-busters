@@ -1,6 +1,6 @@
 .first-screen__main {
-  width: 656px; /* ! заменить на max-width */
-  height: 700px; /* ! заменить на max-height */
+  max-width: 656px; /* ! заменить на max-width */
+  max-height: 700px; /* ! заменить на max-height */
   justify-content: center;
   align-items: center;
   border: 1px solid red;
