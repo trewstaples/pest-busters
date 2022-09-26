@@ -1,44 +1,14 @@
 .entities {
   min-width: 1280px;
   min-height: 700px;
-
-  background-color: #f3f3f3;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }
 
 .entities__heading {
   margin-bottom: 50px;
-}
 
-.entities__info {
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
-
-  min-width: 640px;
-  min-height: 700px;
-
-  padding-top: 100px;
-}
-
-.entities__heading {
   font-size: 30px;
   text-align: center;
-}
-
-.entities__text {
-  max-width: 550px;
-  max-height: 500px;
-
-  text-align: right;
-  font-size: 20px;
-  font-style: normal;
-  line-height: 112.43%;
-  border: 1px solid blue;
-}
-
-.entities__main {
-  min-width: 640px;
-  min-height: 700px;
-  border: 1px solid red;
 }
