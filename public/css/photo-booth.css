@@ -1,4 +1,4 @@
-.fifth-screen {
+.photo-booth {
   width: 1312px; /* ! заменить на max-width */
   height: 700px; /* ! заменить на max-height */
   flex-direction: column;
@@ -30,6 +30,13 @@
   height: 300px; /* ! заменить на max-height */
   justify-content: center;
   align-items: center;
+}
+
+.portfolio__heading {
+  margin-bottom: 50px;
+
+  font-size: 30px;
+  text-align: center;
 }
 
 .portfolio-list {
