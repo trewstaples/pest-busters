@@ -1,0 +1,110 @@
+/* ABOUT PAGE */
+.about-page {
+  border: 1px solid gold;
+}
+
+/* HEADER */
+.header__screen,
+.header__container {
+  min-height: 80px;
+  background: #013068;
+}
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+
+  min-height: 80px;
+  gap: 80px;
+}
+
+.header-logo {
+  max-width: 70px;
+  max-height: 70px;
+  margin-left: 80px;
+}
+
+.header-logo__image {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.menu-list {
+  margin: 0 0 0 20px;
+  gap: 20px;
+}
+
+.menu-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 97px;
+  min-height: 30px;
+
+  font-size: 18px;
+
+  cursor: pointer;
+  color: white;
+}
+
+.menu-list__item-href {
+  color: white;
+}
+
+.menu-list__item:hover,
+.header-callback:hover {
+  border-bottom: 1px solid white;
+}
+
+.header-callback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 97px;
+  min-height: 30px;
+  font-size: 18px;
+
+  color: white;
+}
+
+.header-callback__href {
+  color: white;
+}
+
+/* FIRST SCREEN */
+
+.first-screen {
+  background: url('../img/des-1.jpg') center no-repeat;
+  justify-content: flex-start;
+}
+
+.des-picture {
+  max-width: 856px;
+  max-height: 300px;
+}
+
+.first-screen__info {
+  justify-content: flex-start;
+  align-items: center;
+
+  min-width: 600px;
+  min-height: 700px;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.first-screen__text {
+  max-width: 420px;
+  max-height: 500px;
+  margin: 0 0px 100px 70px;
+
+  text-align: left;
+  font-size: 20px;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 112.43%;
+  color: white;
+}

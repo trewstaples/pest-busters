@@ -7,8 +7,7 @@
     <meta name="description" content="" />
 
     <link rel="stylesheet" href="public/css/main.css" />
-    <link rel="stylesheet" href="public/css/header.css" />
-    <link rel="stylesheet" href="public/css/first-screen.css" />
+    <link rel="stylesheet" href="public/css/about-page.css" />
     <link rel="stylesheet" href="public/css/second-screen.css" />
     <link rel="stylesheet" href="public/css/third-screen.css" />
     <link rel="stylesheet" href="public/css/fourth-screen.css" />
@@ -18,143 +17,160 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="screen header__screen">
-        <div class="container header__container">
-          <div class="header__wrap flex">
-            <div class="header-logo">
-              <img src="./public/img/logo.png" alt="Логотип компании" class="header-logo__image">
-            </div>
+    <div class="about-page">
+      <header class="header">
+        <div class="screen header__screen">
+          <div class="container header__container">
+            <div class="header__wrap flex">
+              <div class="header-logo">
+                <img src="./public/img/logo.png" alt="Логотип компании" class="header-logo__image" />
+              </div>
 
-            <div class="header-menu">
-              <nav class="menu">
-                <ul class="menu-list flex">
-                  <li class="menu-list__item">О нас</li>
-                  <li class="menu-list__item">Услуги</li>
-                  <li class="menu-list__item">Юр. лица</li>
-                  <li class="menu-list__item">Физ. лица</li>
-                  <li class="menu-list__item">Отзывы</li>
-                  <li class="menu-list__item">Контакты</li>
-                </ul>
-              </nav>
-            </div>
+              <div class="header-menu">
+                <nav class="menu">
+                  <ul class="menu-list flex">
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">О нас</a></li>
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Услуги</a></li>
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Юр. лица</a></li>
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Физ. лица</a></li>
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Отзывы</a></li>
+                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Контакты</a></li>
+                  </ul>
+                </nav>
+              </div>
 
-            <div class="header-callback__wrap">
-              <div class="header-callback">Кнопка обратного звонка</div>
+              <div class="header-callback__wrap">
+                <div class="header-callback">
+                  <a href="#" class="header-callback__href">Кнопка обратного звонка</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
       <div class="screen">
         <div class="container">
           <div class="first-screen flex">
-            <div class="first-screen__main flex"><p>Картинки</p></div>
-            <div class="first-screen__info flex"><p>Текст "О нас"</p></div>
+            <div class="first-screen__info flex">
+              <p class="first-screen__text">
+                Наша фирма осуществляет свою деятельность с 2016. Мы имеем большой опыт работы по уничтожению грызунов, насекомых и других паразитов.
+                Так же мы проводим дезинфекцию помещений.
+
+                <br />
+                <br />
+                Многолетний опыт работы включает в себя сотрудничество с гос учреждениями, такими как детские сады, школы, правительственные
+                учреждения. Также обширная работа со сферой общепита: кафе, рестораны, кофейни, пекарни, сетевые магазины и многое другое.
+
+                <br />
+                <br />
+                Мы работаем лучшими препаратами представленными на рынке, при помощи современного оборудования и индивидуальных средств защиты. Мы
+                гарантируем 100% результат в борьбе с насекомыми и грызунами. Осуществляем работу как с юридическими лицами так и с физическими. С
+                юр.лицами по договору. С физ.лицами по обработке жилых помещений (квартиры, комнаты, дома).
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="screen">
-        <div class="container">
-          <div class="second-screen">
-            <div class="services flex">Текст "Услуги"</div>
+    <div class="screen">
+      <div class="container">
+        <div class="second-screen">
+          <div class="services flex">Текст "Услуги"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="container">
+        <div class="third-screen">
+          <div class="entities flex">Таблица "Юр.лица"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="container">
+        <div class="fourth-screen">
+          <div class="individuals flex">Таблица "Физ.лица</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="container">
+        <div class="fifth-screen flex">
+          <p>Фото "Отзывы с Авито"</p>
+          <div class="reviews">
+            <ul class="reviews-list flex">
+              <li class="reviews-list__item">Отзыв 1</li>
+              <li class="reviews-list__item">Отзыв 2</li>
+              <li class="reviews-list__item">Отзыв 3</li>
+            </ul>
+          </div>
+
+          <div class="portfolio">
+            <p>Фотолента "Примеры работ"</p>
+            <ul class="portfolio-list flex">
+              <li class="portfolio-list__item">Пример работы 1</li>
+              <li class="portfolio-list__item">Пример работы 2</li>
+              <li class="portfolio-list__item">Пример работы 3</li>
+              <li class="portfolio-list__item">Пример работы 4</li>
+              <li class="portfolio-list__item">Пример работы 5</li>
+              <li class="portfolio-list__item">Пример работы 6</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="screen">
-        <div class="container">
-          <div class="third-screen">
-            <div class="entities flex">Таблица "Юр.лица"</div>
-          </div>
-        </div>
-      </div>
+    <footer class="footer">
+      <div class="screen footer__screen">
+        <div class="container footer__container">
+          <div class="footer__wrap flex">
+            <div class="footer-logo">Логотип футера</div>
 
-      <div class="screen">
-        <div class="container">
-          <div class="fourth-screen">
-            <div class="individuals flex">Таблица "Физ.лица</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="screen">
-        <div class="container">
-          <div class="fifth-screen flex">
-            <p>Фото "Отзывы с Авито"</p>
-            <div class="reviews">
-              <ul class="reviews-list flex">
-                <li class="reviews-list__item">Отзыв 1</li>
-                <li class="reviews-list__item">Отзыв 2</li>
-                <li class="reviews-list__item">Отзыв 3</li>
+            <div class="footer-services__wrap footer__item">
+              <p><b>Услуги</b></p>
+              <ul class="footer-services">
+                <li class="footer-services__item">1. Дезинфекция</li>
+                <li class="footer-services__item">2. Дератизация</li>
+                <li class="footer-services__item">3. Что-то ещё</li>
               </ul>
             </div>
 
-            <div class="portfolio">
-              <p>Фотолента "Примеры работ"</p>
-              <ul class="portfolio-list flex">
-                <li class="portfolio-list__item">Пример работы 1</li>
-                <li class="portfolio-list__item">Пример работы 2</li>
-                <li class="portfolio-list__item">Пример работы 3</li>
-                <li class="portfolio-list__item">Пример работы 4</li>
-                <li class="portfolio-list__item">Пример работы 5</li>
-                <li class="portfolio-list__item">Пример работы 6</li>
+            <div class="footer-menu__wrap footer__item">
+              <p><b>Меню</b></p>
+              <ul class="footer-menu">
+                <li class="footer-menu__item">О нас</li>
+                <li class="footer-menu__item">Услуги</li>
+                <li class="footer-menu__item">Юр. Лица</li>
+                <li class="footer-menu__item">Физ. Лица</li>
+                <li class="footer-menu__item">Отзывы</li>
+              </ul>
+            </div>
+
+            <div class="footer-contacts__wrap footer__item">
+              <p><b>Контакты</b>p></p>
+              <ul class="footer-contacts">
+                <li class="footer-contacts__item">+7(000)000-00-00</li>
+                <li class="footer-contacts__item">г.Санкт-Петербург</li>
+                <li class="footer-contacts__item">info@mail.ru</li>
+              </ul>
+            </div>
+
+            <div class="footer-payment__wrap footer__item">
+              <p><b>Способ оплаты</b></p>
+              <ul class="footer-payment">
+                <li class="footer-payment__item">Банковской картой</li>
+                <li class="footer-payment__item">Наличными</li>
+                <li class="footer-payment__item">По договору с отсрочкой платежа</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-      <footer class="footer">
-        <div class="screen footer__screen">
-          <div class="container footer__container">
-            <div class="footer__wrap flex">
-              <div class="footer-logo">Логотип футера</div>
-
-              <div class="footer-services__wrap footer__item">
-                <p><b>Услуги</b></p>
-                <ul class="footer-services">
-                  <li class="footer-services__item">1. Дезинфекция</li>
-                  <li class="footer-services__item">2. Дератизация</li>
-                  <li class="footer-services__item">3. Что-то ещё</li>
-                </ul>
-              </div>
-
-              <div class="footer-menu__wrap footer__item">
-                <p><b>Меню</b></p>
-                <ul class="footer-menu">
-                  <li class="footer-menu__item">О нас</li>
-                  <li class="footer-menu__item">Услуги</li>
-                  <li class="footer-menu__item">Юр. Лица</li>
-                  <li class="footer-menu__item">Физ. Лица</li>
-                  <li class="footer-menu__item">Отзывы</li>
-                </ul>
-              </div>
-
-              <div class="footer-contacts__wrap footer__item">
-                <p><b>Контакты</b/p></p>
-                <ul class="footer-contacts">
-                  <li class="footer-contacts__item">+7(000)000-00-00</li>
-                  <li class="footer-contacts__item">г.Санкт-Петербург</li>
-                  <li class="footer-contacts__item">info@mail.ru</li>
-                </ul>
-              </div>
-
-              <div class="footer-payment__wrap footer__item">
-                <p><b>Способ оплаты</b></p>
-                <ul class="footer-payment">
-                  <li class="footer-payment__item">Банковской картой</li>
-                  <li class="footer-payment__item">Наличными</li>
-                  <li class="footer-payment__item">По договору с отсрочкой платежа</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </footer>
   </body>
 </html>
