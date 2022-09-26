@@ -1,7 +1,59 @@
+.second-screen {
+}
+
 .services {
-  width: 1312px; /* ! заменить на max-width */
-  height: 700px; /* ! заменить на max-height */
-  justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  justify-content: flex-start;
+
+  min-width: 1280px;
+  min-height: 800px;
+}
+
+.services-list__wrap {
+  max-width: 650px;
+  min-height: 600px;
+  /* background: rgba(0, 0, 0, 0); */
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+
+  min-width: 1280px;
+  min-height: 800px;
+  padding: 50px 0 0 0;
+}
+
+.services-list__item {
+  margin: 0 0px 30px 70px;
+  max-width: 400px;
+  min-height: 350px;
+
+  text-align: left;
+  font-size: 20px;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 112.43%;
+
+  color: #111111;
+  background-color: #013068;
+  background-color: #f3f3f3;
+}
+
+.services-list__item-icon {
+  max-width: 84px;
+  max-height: 94px;
+  border-radius: 50%;
+}
+
+.services-list__item-description {
+  font-size: 18px;
+}
+
+.services-item__wrap {
+  min-width: 300px;
+  min-height: 350px;
+
+  margin: 10px;
+  border: 1px solid orange;
 }
