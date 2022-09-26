@@ -1,8 +1,13 @@
 .services {
   min-width: 1280px;
   min-height: 800px;
+  margin-top: 50px;
 
-  /* border: 1px solid blue; */
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 30px;
 }
 
 .services-list {

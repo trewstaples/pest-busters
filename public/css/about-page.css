@@ -85,14 +85,22 @@
   justify-content: flex-start;
 }
 
+.about-heading {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
 .des-picture {
   max-width: 856px;
   max-height: 300px;
 }
 
 .first-screen__info {
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
 
   min-width: 600px;
   min-height: 700px;
@@ -102,9 +110,9 @@
 }
 
 .first-screen__text {
-  max-width: 420px;
+  max-width: 500px;
   max-height: 500px;
-  margin: 0 0px 100px 70px;
+  margin: 0 0px 100px 50px;
 
   text-align: left;
   font-size: 20px;
