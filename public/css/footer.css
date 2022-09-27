@@ -1,26 +1,52 @@
 .footer__screen,
 .footer__container {
-  min-height: 400px; /* ! заменить на max-height */
+  min-height: 600px;
+  background: #013068;
 }
 
 .footer__wrap {
-  width: 1312px; /* ! заменить на max-width */
-  min-height: 400px; /* ! заменить на max-height */
-  gap: 70px;
-  justify-content: center;
+  min-width: 1312px;
+  min-height: 600px;
+
   align-items: center;
+  justify-content: center;
+  gap: 70px;
+
+  color: white;
   border: 1px solid black;
 }
 
 .footer-logo {
-  width: 122px; /* ! заменить на max-width */
-  height: 60px; /* ! заменить на max-height */
+  max-width: 140px;
+  max-height: 140px;
+
   text-align: center;
-  border: 1px solid blue;
+}
+
+.footer-logo__icon {
+  max-width: 140px;
+  max-height: 140px;
 }
 
 .footer__item {
-  width: 200px; /* ! заменить на max-height */
-  height: 150px; /* ! заменить на max-height */
-  border: 1px solid blue;
+  min-width: 200px; /* ! заменить на max-height */
+  min-height: 150px; /* ! заменить на max-height */
+}
+
+.footer-heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+.footer-services,
+.footer-menu,
+.footer-contacts,
+.footer-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-top: 50px;
+
+  font-size: 18px;
 }
