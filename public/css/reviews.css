@@ -1,0 +1,17 @@
+.reviews {
+  margin-top: 50px;
+  min-width: 1280px;
+  min-height: 300px;
+  flex-direction: column;
+  border: 1px solid blue;
+}
+
+.reviews-list {
+  flex-direction: column;
+}
+
+.reviews-list__item {
+  width: 656px; /* ! заменить на max-width */
+  height: 100px; /* ! заменить на max-height */
+  border: 1px solid blue;
+}

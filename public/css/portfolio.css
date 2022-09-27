@@ -1,0 +1,42 @@
+.portfolio__wrap {
+  min-height: 400px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-container {
+  margin-top: 50px;
+
+  max-width: 100%;
+  min-height: 400px;
+}
+
+.portfolio {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 1280px;
+  min-height: 400px;
+}
+
+.portfolio-list {
+  gap: 30px;
+}
+
+.portfolio-list__item {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.portfolio-photo__cover {
+  max-width: 400px;
+  max-height: 266px;
+  overflow: hidden;
+}
+
+.portfolio-photo {
+  max-width: 400px;
+  max-height: 400px;
+}
