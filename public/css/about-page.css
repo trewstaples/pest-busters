@@ -3,7 +3,7 @@
 /* HEADER */
 
 .header {
-  min-height: 80px;
+  min-height: 110px;
 }
 
 .header__screen {
@@ -12,7 +12,7 @@
 
 .header__screen,
 .header__container {
-  min-height: 80px;
+  min-height: 110px;
   background: #013068;
 }
 
@@ -21,17 +21,17 @@
   align-items: center;
   gap: 80px;
 
-  min-height: 80px;
+  min-height: 110px;
 }
 
 .header-logo {
-  max-width: 70px;
-  max-height: 70px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .header-logo__image {
-  max-width: 70px;
-  max-height: 70px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .menu-list {
@@ -47,7 +47,8 @@
   min-width: 97px;
   min-height: 30px;
 
-  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  font-size: 19px;
 
   cursor: pointer;
   color: white;
@@ -69,7 +70,10 @@
 
   min-width: 97px;
   min-height: 30px;
-  font-size: 18px;
+
+  font-family: Roboto, sans-serif;
+  font-size: 19px;
+  white-space: nowrap;
 
   color: white;
 }
@@ -81,7 +85,8 @@
 /* FIRST SCREEN */
 
 .first-screen {
-  background: url('../img/des-1.jpg') center no-repeat;
+  background: url('../img/des-1-test.jpeg') center no-repeat;
+  background-size: cover;
   justify-content: flex-start;
 }
 
@@ -114,10 +119,11 @@
   max-height: 500px;
   margin: 0 0px 100px 50px;
 
-  text-align: left;
-  font-size: 20px;
-  font-style: normal;
+  font-family: Roboto, sans-serif;
   font-size: 23px;
+  font-style: normal;
   line-height: 112.43%;
+  text-align: left;
+
   color: white;
 }
