@@ -36,8 +36,17 @@
   max-width: 550px;
   max-height: 500px;
 
-  text-align: right;
-  font-size: 20px;
+  font-family: Roboto, sans-serif;
   font-style: normal;
+  font-size: 23px;
   line-height: 112.43%;
+  text-align: left;
+}
+
+.entities__text--stock__wrap,
+.entities__text--documents__wrap {
+  display: inline-block;
+  margin: 10px 0 10px 0;
+  border: 1px solid black;
+  text-align: center;
 }
