@@ -28,8 +28,9 @@
   max-width: 550px;
   max-height: 500px;
 
-  text-align: right;
-  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 23px;
+  text-align: left;
   font-style: normal;
   line-height: 112.43%;
 }
