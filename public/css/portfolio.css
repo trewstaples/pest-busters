@@ -22,21 +22,21 @@
 }
 
 .portfolio-list {
-  gap: 30px;
+  gap: 1vw;
+  margin: 0 25px;
 }
 
 .portfolio-list__item {
-  max-width: 400px;
-  max-height: 400px;
+  flex: 1 1;
 }
 
 .portfolio-photo__cover {
-  max-width: 400px;
-  max-height: 266px;
   overflow: hidden;
+  height: 0;
+  padding-bottom: 60%;
 }
 
 .portfolio-photo {
-  max-width: 400px;
-  max-height: 400px;
+  display: block;
+  max-width: 100%;
 }
