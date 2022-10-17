@@ -39,3 +39,10 @@
   min-width: 640px;
   min-height: 700px;
 }
+
+.individuals__text--documents__wrap {
+  display: inline-block;
+  margin: 10px 0 10px 0;
+  border: 1px solid black;
+  text-align: center;
+}
