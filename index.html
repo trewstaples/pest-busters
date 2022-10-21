@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="public/css/portfolio.css" />
     <link rel="stylesheet" href="public/css/reviews.css" />
     <link rel="stylesheet" href="public/css/footer.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
     <title>Pest Busters</title>
   </head>
 
@@ -297,39 +299,67 @@
 
     <div class="screen portfolio__wrap" id="portfolio">
       <div class="container portfolio-container">
-        <div class="portfolio flex">
-          <ul class="portfolio-list flex">
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
-                <img src="./public/img/des-6.jpg" alt="Фото работ" class="portfolio-photo" />
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-1.jpg" alt="Фото работ" class="portfolio-photo" />
               </div>
-            </li>
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
-                <img src="./public/img/des-5.jpg" alt="Фото работ" class="portfolio-photo" />
-              </div>
-            </li>
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
-                <img src="./public/img/des-3.jpg" alt="Фото работ" class="portfolio-photo" />
-              </div>
-            </li>
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
                 <img src="./public/img/des-2.jpg" alt="Фото работ" class="portfolio-photo" />
               </div>
-            </li>
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-3.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-4.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-5.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
                 <img src="./public/img/des-7.jpg" alt="Фото работ" class="portfolio-photo" />
               </div>
-            </li>
-            <li class="portfolio-list__item">
-              <div class="portfolio-photo__cover">
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
                 <img src="./public/img/des-8.jpg" alt="Фото работ" class="portfolio-photo" />
               </div>
-            </li>
-          </ul>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-9.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-10.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-11.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="portfolio-photo__wrap">
+                <img src="./public/img/des-12.jpg" alt="Фото работ" class="portfolio-photo" />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
@@ -390,5 +420,21 @@
     </footer>
 
     <script type="module" src="./public/js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
   </body>
 </html>

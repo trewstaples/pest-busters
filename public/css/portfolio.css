@@ -21,22 +21,33 @@
   min-height: 400px;
 }
 
-.portfolio-list {
-  gap: 1vw;
-  margin: 0 25px;
+.swiper-wrapper {
+  margin-bottom: 30px;
 }
 
-.portfolio-list__item {
-  flex: 1 1;
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
-.portfolio-photo__cover {
+.portfolio-photo__wrap {
   overflow: hidden;
   height: 0;
   padding-bottom: 60%;
 }
 
-.portfolio-photo {
+.swiper-slide img {
   display: block;
   max-width: 100%;
+  object-fit: cover;
 }

@@ -85,7 +85,7 @@
 /* FIRST SCREEN */
 
 .first-screen {
-  background: url('../img/des-1-test.jpeg') center no-repeat;
+  background: url('../img/des-about.jpeg') center no-repeat;
   background-size: cover;
   justify-content: flex-start;
 }
