@@ -30,12 +30,12 @@
               <div class="header-menu">
                 <nav class="menu">
                   <ul class="menu-list flex">
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">О нас</a></li>
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Услуги</a></li>
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Юр. лица</a></li>
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Физ. лица</a></li>
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Отзывы</a></li>
-                    <li class="menu-list__item"><a href="#" class="menu-list__item-href">Контакты</a></li>
+                    <li class="menu-list__item"><a href="#about" class="menu-list__item-href">О нас</a></li>
+                    <li class="menu-list__item"><a href="#services" class="menu-list__item-href">Услуги</a></li>
+                    <li class="menu-list__item"><a href="#entities" class="menu-list__item-href">Юр. лица</a></li>
+                    <li class="menu-list__item"><a href="#individuals" class="menu-list__item-href">Физ. лица</a></li>
+                    <li class="menu-list__item"><a href="#portfolio" class="menu-list__item-href">Работы</a></li>
+                    <li class="menu-list__item"><a href="#footer" class="menu-list__item-href">Контакты</a></li>
                   </ul>
                 </nav>
               </div>
@@ -50,7 +50,7 @@
         </div>
       </header>
 
-      <div class="screen">
+      <div class="screen" id="about">
         <div class="container">
           <div class="first-screen flex">
             <div class="first-screen__info flex">
@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="screen services__wrap">
+    <div class="screen services__wrap" id="services">
       <div class="container">
         <div class="services">
           <h2 class="chapter-heading">Услуги</h2>
@@ -148,7 +148,7 @@
       </div>
     </div>
 
-    <div class="screen entities__wrap">
+    <div class="screen entities__wrap" id="entities">
       <h2 class="entities__heading chapter-heading">Работа с юридическими лицами</h2>
       <div class="container">
         <div class="entities flex">
@@ -223,7 +223,7 @@
       </div>
     </div>
 
-    <div class="screen individuals__wrap">
+    <div class="screen individuals__wrap" id="individuals">
       <h2 class="individuals__heading chapter-heading">Работа с физическими лицами</h2>
       <div class="container">
         <div class="individuals flex">
@@ -295,7 +295,7 @@
       </div>
     </div>
 
-    <div class="screen portfolio__wrap">
+    <div class="screen portfolio__wrap" id="portfolio">
       <div class="container portfolio-container">
         <div class="portfolio flex">
           <ul class="portfolio-list flex">
@@ -334,7 +334,7 @@
       </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="screen footer__screen">
         <div class="container footer__container">
           <div class="footer__wrap flex">
@@ -383,5 +383,7 @@
         </div>
       </div>
     </footer>
+
+    <script type="module" src="./public/js/header.js"></script>
   </body>
 </html>
