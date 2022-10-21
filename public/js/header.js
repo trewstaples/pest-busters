@@ -8,7 +8,7 @@ const createLinkScroll = (elementHref) => {
     const blockID = elementAnchor.getAttribute('href');
     document.querySelector('' + blockID).scrollIntoView({
       behavior: 'smooth',
-      block: 'start',
+      block: 'center',
       inline: 'nearest',
     });
   });
