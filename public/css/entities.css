@@ -93,7 +93,7 @@ table.entities__table td {
 .entities__text--stock__wrap,
 .entities__text--documents__wrap {
   display: inline-block;
-  margin: 10px 0 10px 0;
+  margin: 12px 0 10px 0;
   border: 1px solid black;
   text-align: center;
 }
