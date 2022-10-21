@@ -35,37 +35,36 @@
   line-height: 112.43%;
 }
 
-.individuals__main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-
-  min-width: 640px;
-  min-height: 700px;
-  padding-top: 100px;
+table.individuals__table {
+  border: 1px solid #ecedee; /* общая рамка вокруг таблицы */
+  margin: 10px 0; /* отступ сверху и снизу от таблицы 10px, слева и справа 0 */
+  width: 100%; /* ширина таблицы */
 }
-
-.individuals__work-heading {
-  font-family: Roboto, sans-serif;
-  font-size: 23px;
-  text-align: center;
+/* параметры для ячейек заголовков */
+table.individuals__table th {
+  background: #124d9c; /* цвет ячейки заголовка */
+  border-right: 1px solid #ecedee; /* рамка справа от ячейки заголовка */
+  color: #ffffff; /* цвет шрифта заголовка */
+  font-size: 15px; /* размер шрифта заголовка */
+  padding: 5px; /* внутренний отступ в заголовке */
+  text-align: center; /* расположение текста по центру ячейки заголовка (центрирование) */
 }
-
-.individuals__work {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-
-  min-width: 550px;
-  min-height: 500px;
+/* параметры для нечетных строк таблицы 1,3,5,7 и т.д. */
+table.individuals__table tr:nth-child(odd) {
+  background: #f2f7fd; /* цвет фона строки */
 }
-
-.individuals__place,
-.individuals__price {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* параметры только для первой ячейки в каждой из строк */
+table.individuals__table td:nth-child(1) {
+  text-align: left;
+}
+/* параметры для всех ячеек таблицы */
+table.individuals__table td {
+  border-bottom: 1px solid #ecedee; /* рамка снизу ячейки */
+  border-right: 1px solid #ecedee; /* рамка справа ячейки */
+  font-size: 14px; /* размер шрифта */
+  padding: 4px; /* внутренний отступ в ячейки от края */
+  vertical-align: middle; /* горизонтальное выравнивание */
+  text-align: center; /* текст по центру */
 }
 
 .individuals__text--documents__wrap {
