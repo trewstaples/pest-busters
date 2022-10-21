@@ -32,6 +32,10 @@
   min-height: 150px; /* ! заменить на max-height */
 }
 
+.footer-menu__item-href {
+  color: white;
+}
+
 .footer-heading {
   text-align: center;
   font-size: 30px;
