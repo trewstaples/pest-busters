@@ -36,13 +36,41 @@
 }
 
 .individuals__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
   min-width: 640px;
   min-height: 700px;
+  padding-top: 100px;
+}
+
+.individuals__work-heading {
+  font-family: Roboto, sans-serif;
+  font-size: 23px;
+  text-align: center;
+}
+
+.individuals__work {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+
+  min-width: 550px;
+  min-height: 500px;
+}
+
+.individuals__place,
+.individuals__price {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .individuals__text--documents__wrap {
   display: inline-block;
   margin: 10px 0 10px 0;
-  border: 1px solid black;
+
   text-align: center;
 }
