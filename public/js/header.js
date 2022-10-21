@@ -1,15 +1,17 @@
 const anchors = ['about', 'services', 'entities', 'individuals', 'portfolio', 'footer'];
 
 const createLinkScroll = (elementHref) => {
-  const elementAnchor = document.querySelector(`a[href*="#${elementHref}"]`);
+  const elementAnchors = document.querySelectorAll(`a[href*="#${elementHref}"]`);
 
-  elementAnchor.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    const blockID = elementAnchor.getAttribute('href');
-    document.querySelector('' + blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-      inline: 'nearest',
+  elementAnchors.forEach((anchor) => {
+    anchor.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      const blockID = anchor.getAttribute('href');
+      document.querySelector('' + blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      });
     });
   });
 };
