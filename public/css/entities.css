@@ -1,53 +1,23 @@
 .entities {
+  padding: 30px;
+
   justify-content: center;
   align-items: center;
 
-  min-width: 1280px;
-  min-height: 700px;
+  max-width: 1280px;
 
   background-color: #f3f3f3;
 }
 
-.entities__heading {
-  margin-bottom: 50px;
-
-  font-size: 30px;
-  text-align: center;
-}
-
-.entities__info {
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
-
-  min-width: 640px;
-  min-height: 700px;
-
-  padding-top: 100px;
-}
-
-.entities__text {
-  max-width: 550px;
-  max-height: 500px;
-
-  font-family: Roboto, sans-serif;
-  font-size: 23px;
-  font-style: normal;
-  line-height: 112.43%;
-  text-align: left;
-}
-
 .entities__main {
+  padding-left: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
 
   min-width: 640px;
-  min-height: 700px;
-  padding-top: 100px;
-  padding-left: 50px;
 }
 
 .entities__work-heading {
@@ -71,15 +41,15 @@ table.entities__table th {
   padding: 5px;
   text-align: center;
 }
-/* параметры для нечетных строк таблицы 1,3,5,7 и т.д. */
+
 table.entities__table tr:nth-child(odd) {
   background: #f2f7fd;
 }
-/* параметры только для первой ячейки в каждой из строк */
+
 table.entities__table td:nth-child(1) {
   text-align: left;
 }
-/* параметры для всех ячеек таблицы */
+
 table.entities__table td {
   border-bottom: 1px solid #ecedee;
   border-right: 1px solid #ecedee;
@@ -96,4 +66,30 @@ table.entities__table td {
   margin: 12px 0 10px 0;
   border: 1px solid black;
   text-align: center;
+}
+
+.entities__heading {
+  margin-bottom: 50px;
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.entities__info {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+
+  min-width: 640px;
+}
+
+.entities__text {
+  max-width: 550px;
+
+  font-family: Roboto, sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  line-height: 112.43%;
+  text-align: left;
 }

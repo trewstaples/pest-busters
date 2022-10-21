@@ -1,15 +1,15 @@
 .footer__screen,
 .footer__container {
-  min-height: 600px;
+  min-height: 450px;
   background: #013068;
 }
 
 .footer__wrap {
   min-width: 1312px;
-  min-height: 600px;
+  min-height: 450px;
 
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 70px;
 
   color: white;
@@ -28,8 +28,10 @@
 }
 
 .footer__item {
-  min-width: 200px; /* ! заменить на max-height */
-  min-height: 150px; /* ! заменить на max-height */
+  margin-top: 50px;
+
+  max-width: 200px;
+  max-height: 150px;
 }
 
 .footer-menu__item-href {
@@ -37,8 +39,9 @@
 }
 
 .footer-heading {
-  text-align: center;
+  font-family: Roboto, sans-serif;
   font-size: 30px;
+  white-space: nowrap;
 }
 
 .footer-services,
@@ -51,5 +54,11 @@
 
   margin-top: 50px;
 
-  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+}
+
+.footer-services__item:hover,
+.footer-menu__item:hover {
+  opacity: 0.7;
 }
