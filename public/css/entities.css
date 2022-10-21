@@ -42,11 +42,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 25px;
 
   min-width: 640px;
   min-height: 700px;
   padding-top: 100px;
-  border: 1px solid black;
+  padding-left: 50px;
 }
 
 .entities__work-heading {
@@ -56,7 +57,7 @@
 
 table.entities__table {
   border: 1px solid #ecedee;
-  margin: 10px 0;
+  margin: 10px 0px;
   width: 100%;
   height: 500px;
 }
