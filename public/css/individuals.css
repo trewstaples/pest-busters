@@ -35,23 +35,42 @@
   line-height: 112.43%;
 }
 
-table.individuals__table {
-  border: 1px solid #ecedee; /* общая рамка вокруг таблицы */
-  margin: 10px 0; /* отступ сверху и снизу от таблицы 10px, слева и справа 0 */
-  width: 100%; /* ширина таблицы */
+.individuals__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  min-width: 640px;
+  min-height: 700px;
+  padding-top: 100px;
+  padding-left: 50px;
 }
-/* параметры для ячейек заголовков */
+
+.individuals__work-heading {
+  font-family: Roboto, sans-serif;
+  font-size: 23px;
+}
+
+table.individuals__table {
+  border: 1px solid #ecedee;
+  margin: 10px 0px;
+  width: 100%;
+  height: 500px;
+}
+
 table.individuals__table th {
-  background: #124d9c; /* цвет ячейки заголовка */
-  border-right: 1px solid #ecedee; /* рамка справа от ячейки заголовка */
-  color: #ffffff; /* цвет шрифта заголовка */
-  font-size: 15px; /* размер шрифта заголовка */
-  padding: 5px; /* внутренний отступ в заголовке */
-  text-align: center; /* расположение текста по центру ячейки заголовка (центрирование) */
+  background: #013068;
+  border-right: 1px solid #ecedee;
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
 }
 /* параметры для нечетных строк таблицы 1,3,5,7 и т.д. */
 table.individuals__table tr:nth-child(odd) {
-  background: #f2f7fd; /* цвет фона строки */
+  background: #f2f7fd;
 }
 /* параметры только для первой ячейки в каждой из строк */
 table.individuals__table td:nth-child(1) {
@@ -59,12 +78,13 @@ table.individuals__table td:nth-child(1) {
 }
 /* параметры для всех ячеек таблицы */
 table.individuals__table td {
-  border-bottom: 1px solid #ecedee; /* рамка снизу ячейки */
-  border-right: 1px solid #ecedee; /* рамка справа ячейки */
-  font-size: 14px; /* размер шрифта */
-  padding: 4px; /* внутренний отступ в ячейки от края */
-  vertical-align: middle; /* горизонтальное выравнивание */
-  text-align: center; /* текст по центру */
+  border-bottom: 1px solid #ecedee;
+  border-right: 1px solid #ecedee;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  padding: 4px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .individuals__text--documents__wrap {
