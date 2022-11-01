@@ -37,7 +37,7 @@
 
 .menu-list {
   margin: 0 0 0 20px;
-  gap: 40px;
+  gap: 100px;
 }
 
 .menu-list__item {
@@ -56,6 +56,7 @@
 }
 
 .menu-list__item-href {
+  font-family: Roboto, sans-serif;
   color: white;
 }
 
@@ -86,7 +87,7 @@
 /* FIRST SCREEN */
 
 .first-screen {
-  background: url('../img/des-about.jpeg') center no-repeat;
+  background: url('../img/des-7.jpg') center no-repeat;
   background-size: cover;
   justify-content: flex-start;
   border-radius: 0 0 15px 15px;
@@ -114,13 +115,13 @@
 
   color: white;
   background: rgba(0, 0, 0, 0.6);
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 0 15px;
 }
 
 .first-screen__text {
   max-width: 500px;
   max-height: 500px;
-  margin: 0 0px 100px 50px;
+  margin: 0 0 120px 50px;
 
   font-family: Roboto, sans-serif;
   font-size: 23px;
@@ -129,4 +130,5 @@
   text-align: left;
 
   color: white;
+  /* text-indent: 30px; */
 }

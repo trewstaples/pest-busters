@@ -37,7 +37,7 @@
 .services-list__item-icon {
   max-width: 84px;
   max-height: 94px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .services-item__wrap {
