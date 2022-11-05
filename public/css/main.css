@@ -104,3 +104,16 @@ h6 {
 a {
   color: inherit;
 }
+
+.chapter-heading {
+  font-family: var(--font-family);
+  font-size: 30px;
+}
+
+.chapter-content {
+  margin: 50px 0 0 0;
+}
+/* 
+.screen:not(.screen:first-of-type) {
+  margin: 0 0 0 50px;
+} */
