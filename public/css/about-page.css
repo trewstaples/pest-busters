@@ -19,14 +19,24 @@
 
 .header-content__wrap {
   align-items: center;
-  gap: 100px;
+  gap: 80px;
   min-height: 110px;
   font-family: var(--font-family);
   color: var(--text-secondary);
 }
 
+.header-logo {
+  align-items: center;
+  gap: 5px;
+}
+
+.header-logo__sign {
+  flex-direction: column;
+  gap: 5px;
+}
+
 .menu-list {
-  gap: 60px;
+  gap: 48px;
 }
 
 .menu-list__item {
