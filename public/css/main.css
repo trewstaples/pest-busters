@@ -87,7 +87,6 @@ h6 {
   max-width: 1280px;
   min-height: 700px;
   margin: 0 auto;
-  /* border: 1px solid black; */
 }
 
 .flex {
@@ -95,6 +94,13 @@ h6 {
   flex-direction: row;
 }
 
-.privet {
-  color: #013068 #00ccff;
+:root {
+  --color-primary: #013068;
+  --text-primary: #000000;
+  --text-secondary: #ffffff;
+  --font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: inherit;
 }

@@ -59,6 +59,8 @@
 }
 
 .footer-services__item:hover,
-.footer-menu__item:hover {
+.footer-menu__item:hover,
+.footer-contacts__item:hover {
   opacity: 0.7;
+  cursor: pointer;
 }

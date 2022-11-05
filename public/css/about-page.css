@@ -8,80 +8,34 @@
 
 .header__screen {
   position: fixed;
-  z-index: 100;
+  z-index: 10;
 }
 
 .header__screen,
 .header__container {
   min-height: 110px;
-  background: #013068;
+  background: var(--color-primary);
 }
 
-.header__wrap {
-  display: flex;
+.header-content__wrap {
   align-items: center;
-  gap: 75px;
-
+  gap: 100px;
   min-height: 110px;
-}
-
-.header-logo {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.header-logo__image {
-  max-width: 100px;
-  max-height: 100px;
+  font-family: var(--font-family);
+  color: var(--text-secondary);
 }
 
 .menu-list {
-  margin: 0 0 0 20px;
-  gap: 100px;
+  gap: 60px;
 }
 
 .menu-list__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 97px;
-  min-height: 30px;
-
-  font-family: Roboto, sans-serif;
   font-size: 20px;
-
-  cursor: pointer;
-  color: white;
-}
-
-.menu-list__item-href {
-  font-family: Roboto, sans-serif;
-  color: white;
 }
 
 .menu-list__item:hover,
 .header-callback:hover {
   opacity: 0.5;
-}
-
-.header-callback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 97px;
-  min-height: 30px;
-
-  font-family: Roboto, sans-serif;
-  font-size: 19px;
-  white-space: nowrap;
-
-  color: white;
-}
-
-.header-callback__href {
-  color: white;
 }
 
 /* FIRST SCREEN */
@@ -94,8 +48,9 @@
 }
 
 .about-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 27px;
   text-align: center;
-  font-size: 30px;
   color: white;
 }
 
