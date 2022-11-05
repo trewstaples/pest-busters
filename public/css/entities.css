@@ -1,24 +1,22 @@
 .entities {
-  padding: 30px;
-
-  justify-content: center;
+  padding: 50px;
   align-items: center;
+  justify-content: center;
 
-  max-width: 1280px;
-
-  background-color: #f3f3f3;
+  background-color: var(--bg-secondary);
   border-radius: 15px;
+  border: 1px solid black;
 }
 
 .entities__main {
-  padding-left: 50px;
+  margin: 0 0 0 50px;
 
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
 
   min-width: 640px;
+  border: 1px solid black;
 }
 
 .entities__work-heading {

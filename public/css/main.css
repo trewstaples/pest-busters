@@ -95,7 +95,8 @@ h6 {
 }
 
 :root {
-  --color-primary: #013068;
+  --bg-primary: #013068;
+  --bg-secondary: #f3f3f3;
   --text-primary: #000000;
   --text-secondary: #ffffff;
   --font-family: 'Roboto', sans-serif;

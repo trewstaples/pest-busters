@@ -10,7 +10,7 @@
 .header__screen,
 .header__container {
   min-height: 110px;
-  background: var(--color-primary);
+  background: var(--bg-primary);
 }
 
 .header-content__wrap {
