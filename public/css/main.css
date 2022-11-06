@@ -109,6 +109,7 @@ a {
 .chapter-heading {
   font-family: var(--font-family);
   font-size: 30px;
+  text-align: center;
 }
 
 .chapter-content {
