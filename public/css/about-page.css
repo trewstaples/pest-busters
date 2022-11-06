@@ -49,6 +49,7 @@
   background-size: cover;
   justify-content: flex-start;
   border-radius: 0 0 15px 15px;
+  border: 1px solid black;
 }
 
 .first-screen__info {

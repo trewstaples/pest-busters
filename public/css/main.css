@@ -80,12 +80,10 @@ h6 {
 
 .screen {
   min-width: 100%;
-  min-height: 700px;
 }
 
 .container {
   max-width: 1280px;
-  min-height: 700px;
   margin: 0 auto;
 }
 
@@ -110,12 +108,5 @@ a {
   font-family: var(--font-family);
   font-size: 30px;
   text-align: center;
+  margin: 100px 0 50px 0;
 }
-
-.chapter-content {
-  margin: 50px 0 0 0;
-}
-/* 
-.screen:not(.screen:first-of-type) {
-  margin: 0 0 0 50px;
-} */

@@ -1,17 +1,14 @@
 .services {
   text-align: center;
+  font-family: var(--font-family);
 }
 
 .services-list {
   display: grid;
   grid-template-columns: 440px 440px 440px;
-
-  font-family: var(--font-family);
 }
 
 .services-list__item {
-  margin: 0 0 40px 0;
-
   width: 400px;
   height: 270px;
 
@@ -19,6 +16,12 @@
   line-height: 112.43%;
   background-color: #f3f3f3;
   border-radius: 15px;
+}
+
+.services-list__item:nth-child(1),
+.services-list__item:nth-child(2),
+.services-list__item:nth-child(3) {
+  margin: 0 0 40px 0;
 }
 
 .services-item-icon {

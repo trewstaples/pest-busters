@@ -1,48 +1,41 @@
 .individuals {
-  padding: 30px;
+  padding: 50px;
+  gap: 20px;
   max-width: 1280px;
+  max-height: 700px;
 
-  background-color: #f3f3f3;
+  font-family: var(--font-family);
+  background-color: var(--bg-secondary);
   border-radius: 15px;
 }
 
-.individuals__heading {
-  margin-bottom: 50px;
-  font-size: 30px;
-  text-align: center;
-}
-
 .individuals__main {
-  padding-left: 50px;
-
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
 
-  min-width: 640px;
+  min-width: 590px;
 }
 
 .individuals__work-heading {
-  font-family: Roboto, sans-serif;
-  font-size: 23px;
+  font-size: 22px;
 }
 
 table.individuals__table {
-  border: 1px solid #ecedee;
   margin: 10px 0px;
   width: 100%;
   height: 500px;
+  border: 1px solid #ecedee;
 }
 
 table.individuals__table th {
+  padding: 15px;
+
+  font-size: 22px;
+  text-align: center;
+  color: #ffffff;
   background: #013068;
   border-right: 1px solid #ecedee;
-  color: #ffffff;
-  font-family: Roboto, sans-serif;
-  font-size: 23px;
-  padding: 5px;
-  text-align: center;
 }
 
 table.individuals__table tr:nth-child(odd) {
@@ -54,38 +47,33 @@ table.individuals__table td:nth-child(1) {
 }
 
 table.individuals__table td {
-  border-bottom: 1px solid #ecedee;
-  border-right: 1px solid #ecedee;
-  font-family: Roboto, sans-serif;
-  font-size: 24px;
   padding: 4px;
+  font-size: 22px;
   vertical-align: middle;
   text-align: center;
+
+  border-bottom: 1px solid #ecedee;
+  border-right: 1px solid #ecedee;
 }
 
 .individuals__info {
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
-
-  min-width: 640px;
-}
-
-.individuals__text--documents__wrap {
-  display: inline-block;
-  margin: 65px 0 0 0;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 15px;
+  padding: 0 10px;
+  min-width: 590px;
 }
 
 .individuals__text {
-  max-width: 550px;
-
-  font-family: Roboto, sans-serif;
-  font-size: 23px;
-  text-align: left;
-  font-style: normal;
+  font-size: 22px;
   line-height: 112.43%;
+  text-align: left;
+}
+
+.individuals__text p {
+  margin-bottom: 30px;
+}
+
+.individuals__text p:last-child {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 15px;
 }
