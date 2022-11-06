@@ -1,17 +1,14 @@
 .portfolio__wrap {
-  min-height: 400px;
-  margin: 25px auto;
+  margin: 50px auto;
 }
 
 .portfolio-container {
   max-width: 100%;
-  min-height: 400px;
 }
 
 .portfolio {
   align-items: center;
   max-width: 100%;
-  min-height: 400px;
 }
 
 .swiper-wrapper {
