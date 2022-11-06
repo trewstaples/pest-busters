@@ -78,3 +78,21 @@
 .first-screen__text p {
   margin-bottom: 30px;
 }
+
+/* Contact Form Styles */
+.form-container {
+  position: absolute;
+  margin: 0 auto;
+
+  display: block;
+
+  width: 700px;
+  height: 400px;
+  background: #f3f3f3;
+  color: var(--bg-primary);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
