@@ -1,60 +1,32 @@
 .footer__screen,
 .footer__container {
-  min-height: 450px;
-  background: #013068;
+  background: var(--bg-primary);
 }
 
 .footer__wrap {
-  min-width: 1312px;
-  min-height: 450px;
-
-  justify-content: flex-start;
-  align-items: flex-start;
+  padding: 50px 0 50px 0;
   gap: 70px;
 
-  color: white;
-}
-
-.footer-logo {
-  max-width: 140px;
-  max-height: 140px;
-
-  text-align: center;
-}
-
-.footer-logo__icon {
-  max-width: 140px;
-  max-height: 140px;
-}
-
-.footer__item {
-  margin-top: 50px;
-
-  max-width: 200px;
-  max-height: 150px;
-}
-
-.footer-menu__item-href {
-  color: white;
+  font-family: var(--font-family);
+  color: var(--text-secondary);
 }
 
 .footer-heading {
-  font-family: Roboto, sans-serif;
-  font-size: 30px;
-  white-space: nowrap;
+  margin: 0 0 50px 0;
+  font-size: 25px;
+}
+
+.footer__item {
+  max-width: 200px;
 }
 
 .footer-services,
 .footer-menu,
 .footer-contacts,
 .footer-payment {
-  display: flex;
   flex-direction: column;
   gap: 15px;
 
-  margin-top: 50px;
-
-  font-family: Roboto, sans-serif;
   font-size: 20px;
 }
 
