@@ -43,7 +43,7 @@
                     <li class="menu-list__item"><a href="#individuals" class="menu-list__item-href">Физ. лица</a></li>
                     <li class="menu-list__item"><a href="#portfolio" class="menu-list__item-href">Работы</a></li>
                     <li class="menu-list__item"><a href="#footer" class="menu-list__item-href">Контакты</a></li>
-                    <li class="menu-list__item"><a href="#" class="header-callback__href">Кнопка обратного звонка</a></li>
+                    <li class="menu-list__item contact-form-btn"><a href="#" class="header-callback__href">Кнопка обратного звонка</a></li>
                   </ul>
                 </nav>
               </div>
@@ -53,12 +53,13 @@
       </header>
 
       <div class="form-container">
+        <button class="close-btn">+</button>
         <form class="contact-form">
-          <h2>CONTACT</h2>
-          <input type="text" class="" placeholder="Ваше имя" />
-          <input type="number" class="" placeholder="Ваш номер" />
-          <input type="email" class="" placeholder="Ваша почта" />
-          <textarea id="message" class="" cols="30" rows="10" placeholder="Опишите вашу проблему"></textarea>
+          <h2>Форма обратной связи</h2>
+          <input type="text" id="name" placeholder="Ваше имя" />
+          <input type="number" id="number" placeholder="Ваш номер" />
+          <input type="email" id="email" placeholder="Ваша почта" />
+          <textarea id="message" cols="30" rows="10" placeholder="Опишите вашу проблему"></textarea>
           <input type="submit" class="submit" value="Отправить сообщение" />
         </form>
       </div>
@@ -435,7 +436,7 @@
       </div>
     </footer>
 
-    <script type="module" src="./public/js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper('.mySwiper', {

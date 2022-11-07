@@ -82,17 +82,57 @@
 /* Contact Form Styles */
 .form-container {
   position: absolute;
-  margin: 0 auto;
-
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -300px;
+  padding: 20px;
   display: block;
 
-  width: 700px;
-  height: 400px;
-  background: #f3f3f3;
-  color: var(--bg-primary);
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-radius: 15px;
 }
 
 .contact-form {
+  margin: -15px 0 0 0;
+
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form h2 {
+  font-size: 22px;
+  text-align: center;
+}
+
+.close-btn {
+  position: relative;
+  top: -10px;
+  left: 570px;
+
+  font-size: 30px;
+  color: var(--text-secondary);
+  background: none;
+  transform: rotate(45deg);
+}
+
+.contact-form * {
+  padding-left: 15px;
+  font-size: 18px;
+  border-radius: 15px;
+}
+
+.contact-form input {
+  width: 580px;
+  height: 40px;
+}
+
+.submit:hover,
+.close-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }

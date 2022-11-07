@@ -23,3 +23,21 @@ const scrollToChapter = (hrefElement) => {
 };
 
 ANCHORS.forEach((anchor) => scrollToChapter(anchor));
+
+const contactFormBtn = document.querySelector('.contact-form-btn');
+const formContainer = document.querySelector('.form-container');
+const contactForm = document.querySelector('.contact-form');
+const closeBtn = document.querySelector('.close-btn');
+
+contactFormBtn.addEventListener('click', () => {
+  formContainer.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  formContainer.style.display = 'none';
+});
+
+contactForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  console.log('submit clicked');
+});
