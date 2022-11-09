@@ -37,6 +37,7 @@
 
 .menu-list__item {
   font-size: 20px;
+  cursor: pointer;
 }
 
 .menu-list__item:hover,
