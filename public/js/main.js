@@ -1,3 +1,5 @@
+'use strict';
+
 const ANCHORS = ['about', 'services', 'entities', 'individuals', 'portfolio', 'footer'];
 const HEADER_HEIGHT = 110;
 
@@ -24,19 +26,49 @@ const scrollToChapter = (hrefElement) => {
 
 ANCHORS.forEach((anchor) => scrollToChapter(anchor));
 
-const contactFormBtn = document.querySelector('.contact-form-btn');
-const formContainer = document.querySelector('.form-container');
-const closeBtn = document.querySelector('.close-btn');
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.contact-form');
 
-contactFormBtn.addEventListener('click', () => {
-  formContainer.style.display === 'none' ? (formContainer.style.display = 'block') : (formContainer.style.display = 'none');
+  form.addEventListener('submit', formSend);
+
+  async function formSend(e) {
+    e.preventDefault();
+
+    let error = 0;
+
+    let formData = new FormData(form);
+
+    if (error === 0) {
+      let response = await fetch('sendmail.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        let result = await response.json();
+        alert(result.message);
+        form.reset();
+      } else {
+        alert('Ошибка');
+        console.log(response);
+      }
+    }
+  }
+
+  const contactFormBtn = document.querySelector('.contact-form-btn');
+  const closeBtn = document.querySelector('.close-btn');
+  const formContainer = document.querySelector('.form-container');
+  formContainer.style.display = 'none'
+
+  contactFormBtn.addEventListener('click', () => {
+    formContainer.style.display === 'none' ? (formContainer.style.display = 'block') : (formContainer.style.display = 'none');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    formContainer.style.display = 'none';
+  });
+
 });
-
-closeBtn.addEventListener('click', () => {
-  formContainer.style.display = 'none';
-});
-
-const contactForm = document.querySelector('.contact-form');
 
 let firstName = document.getElementById('name');
 let number = document.getElementById('number');
@@ -86,34 +118,4 @@ message.addEventListener('change', (evt) => {
   }
   message.setCustomValidity('');
   message.style.border = 'none';
-});
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  let formData = {
-    name: firstName.value.toString(),
-    email: email.value.toString(),
-    number: number.value.toString(),
-    message: message.value.toString(),
-  };
-
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', '/');
-  xhr.setRequestHeader('content-type', 'application/json');
-
-  xhr.onload = function () {
-    if (xhr.responseText == 'success') {
-      alert('Email sent');
-      firstName.value = '';
-      email.value = '';
-      number.value = '';
-      message.value = '';
-      formContainer.style.display = 'none';
-    } else {
-      alert('Произошла ошибка. Попробуйте снова');
-    }
-  };
-
-  xhr.send(JSON.stringify(formData));
 });
