@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const contactFormBtn = document.querySelector('.contact-form-btn');
   const closeBtn = document.querySelector('.close-btn');
   const formContainer = document.querySelector('.form-container');
-  formContainer.style.display = 'none'
+  formContainer.style.display = 'none';
 
   contactFormBtn.addEventListener('click', () => {
     formContainer.style.display === 'none' ? (formContainer.style.display = 'block') : (formContainer.style.display = 'none');
@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
   closeBtn.addEventListener('click', () => {
     formContainer.style.display = 'none';
   });
-
 });
 
 let firstName = document.getElementById('name');
@@ -118,4 +117,16 @@ message.addEventListener('change', (evt) => {
   }
   message.setCustomValidity('');
   message.style.border = 'none';
+});
+
+/* Мобильные стили */
+const burgerBtn = document.querySelector('.header__burger');
+const burgerCloseBtn = document.querySelector('.close-btn--burger');
+const menu = document.querySelector('.header-menu');
+
+burgerBtn.addEventListener('click', () => {
+  menu.style.display = 'flex';
+});
+burgerCloseBtn.addEventListener('click', () => {
+  menu.style.display = 'none';
 });
