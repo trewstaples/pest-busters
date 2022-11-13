@@ -106,18 +106,6 @@ email.addEventListener('input', (evt) => {
   email.style.border = 'none';
 });
 
-message.addEventListener('change', (evt) => {
-  const isMessageValid = /^[а-яА-ЯёЁa-zA-Z0-9]+$/.test(evt.target.value);
-  if (!isMessageValid) {
-    message.setCustomValidity('Разрешены только буквы и цифры');
-    message.reportValidity();
-    message.style.border = '3px solid red';
-    return;
-  }
-  message.setCustomValidity('');
-  message.style.border = 'none';
-});
-
 /* Мобильные стили */
 if (window.matchMedia('(max-width: 768px)').matches) {
   const burgerBtn = document.querySelector('.header__burger');
