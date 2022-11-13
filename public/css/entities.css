@@ -58,7 +58,7 @@ table.entities__table td {
 
 .entities__info {
   padding: 0 10px;
-  min-width: 590px;
+  max-width: 590px;
 }
 
 .entities__text {
@@ -77,4 +77,17 @@ table.entities__table td {
   text-align: center;
   border: 1px solid black;
   border-radius: 15px;
+}
+
+@media (max-width: 1312px) {
+  .entities {
+    flex-direction: column;
+    align-items: center;
+    max-height: 1700px;
+  }
+
+  .entities__main {
+    max-width: 390px;
+    min-width: 0px;
+  }
 }

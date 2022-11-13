@@ -6,7 +6,6 @@
 .services-list {
   display: grid;
   grid-template-columns: 440px 440px 440px;
-  border: 1px solid black;
 }
 
 .services-list__item {

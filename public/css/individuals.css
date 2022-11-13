@@ -58,7 +58,7 @@ table.individuals__table td {
 
 .individuals__info {
   padding: 0 10px;
-  min-width: 590px;
+  max-width: 590px;
 }
 
 .individuals__text {
@@ -76,4 +76,17 @@ table.individuals__table td {
   text-align: center;
   border: 1px solid black;
   border-radius: 15px;
+}
+
+@media (max-width: 1312px) {
+  .individuals {
+    flex-direction: column;
+    align-items: center;
+    max-height: 1700px;
+  }
+
+  .individuals__main {
+    max-width: 390px;
+    min-width: 0px;
+  }
 }
