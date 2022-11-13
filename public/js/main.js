@@ -73,7 +73,7 @@ let number = document.getElementById('number');
 let email = document.getElementById('email');
 let message = document.getElementById('message');
 
-firstName.addEventListener('input', (evt) => {
+/* firstName.addEventListener('input', (evt) => {
   const isFirstNameValid = /^[А-ЯЁ ,.'-][а-яё ,.'-]+$/i.test(evt.target.value);
   if (!isFirstNameValid) {
     firstName.reportValidity();
@@ -116,7 +116,7 @@ message.addEventListener('change', (evt) => {
   }
   message.setCustomValidity('');
   message.style.border = 'none';
-});
+}); */
 
 /* Мобильные стили */
 const burgerBtn = document.querySelector('.header__burger');

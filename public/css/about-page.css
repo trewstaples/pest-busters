@@ -44,6 +44,7 @@
 .menu-list__item {
   font-size: 20px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .menu-list__item:hover,
@@ -119,13 +120,16 @@
 
 .close-btn {
   position: relative;
-  top: -10px;
-  left: 570px;
 
   font-size: 30px;
   color: var(--text-secondary);
   background: none;
   transform: rotate(45deg);
+}
+
+.close-btn--form {
+  top: -10px;
+  left: 570px;
 }
 
 .contact-form * {
@@ -190,23 +194,25 @@
     display: block;
   }
   .form-container {
-    border: 1px solid black;
-    top: 50%;
+    top: 20%;
     left: 0%;
-    margin-top: -250px;
-    /* margin-left: -300px; */
     margin: 0;
     padding: 20px;
+    width: 100%;
+  }
+
+  .close-btn--form {
+    top: -20%;
+    left: 95%;
   }
 
   .contact-form {
     margin: -15px 0 0 0;
-
     gap: 10px;
   }
+
   .contact-form input {
-    max-width: 300px;
-    max-height: 40px;
+    width: 100%;
   }
 
   .callback-icon {
