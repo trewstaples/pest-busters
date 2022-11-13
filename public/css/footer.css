@@ -65,7 +65,9 @@
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
   }
+}
 
+@media (max-width: 768px) {
   .footer-heading {
     font-size: 16px;
   }

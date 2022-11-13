@@ -90,7 +90,9 @@ table.entities__table td {
     max-width: 390px;
     min-width: 0px;
   }
+}
 
+@media (max-width: 768px) {
   .entities__work-heading {
     font-size: 16px;
   }
