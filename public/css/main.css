@@ -110,3 +110,11 @@ a {
   text-align: center;
   margin: 100px 0 50px 0;
 }
+
+@media (max-width: 1312px) {
+  .chapter-heading {
+    font-size: 25px;
+    text-align: center;
+    margin: 75px 0 25px 0;
+  }
+}

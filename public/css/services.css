@@ -68,11 +68,23 @@
 
 @media (max-width: 768px) {
   .services-list {
-    grid-template-columns: 440px;
+    grid-template-columns: 400px;
     justify-content: center;
   }
   .services-list__item {
     justify-self: center;
     margin: 0 0 40px 0;
+  }
+
+  .services-list__item {
+    font-size: 15px;
+  }
+
+  .services-item__heading-text {
+    font-size: 16px;
+  }
+
+  .services-item__description {
+    font-size: 15px;
   }
 }

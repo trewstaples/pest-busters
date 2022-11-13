@@ -89,4 +89,20 @@ table.individuals__table td {
     max-width: 390px;
     min-width: 0px;
   }
+
+  .individuals__work-heading {
+    font-size: 16px;
+  }
+
+  table.individuals__table th {
+    font-size: 16px;
+  }
+
+  table.individuals__table td {
+    font-size: 16px;
+  }
+
+  .individuals__text {
+    font-size: 15px;
+  }
 }
