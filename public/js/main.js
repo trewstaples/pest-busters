@@ -11,6 +11,7 @@ const scrollT0 = (el) => {
 };
 
 const servicesItem = document.getElementById('entities');
+const menu = document.querySelector('.header-menu');
 
 const scrollToChapter = (hrefElement) => {
   const anchorElement = document.querySelectorAll(`a[href*="#${hrefElement}"]`);
@@ -20,6 +21,9 @@ const scrollToChapter = (hrefElement) => {
     anchor.addEventListener('click', (evt) => {
       evt.preventDefault();
       scrollT0(anchorChapter);
+      if (window.matchMedia('(max-width: 1312px)').matches) {
+        menu.style.display = 'none';
+      }
     });
   });
 };
@@ -107,10 +111,9 @@ email.addEventListener('input', (evt) => {
 });
 
 /* Мобильные стили */
-if (window.matchMedia('(max-width: 768px)').matches) {
+if (window.matchMedia('(max-width: 1312px)').matches) {
   const burgerBtn = document.querySelector('.header__burger');
   const burgerCloseBtn = document.querySelector('.close-btn--burger');
-  const menu = document.querySelector('.header-menu');
 
   burgerBtn.addEventListener('click', () => {
     menu.style.display = 'flex';
