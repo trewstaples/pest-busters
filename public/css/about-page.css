@@ -88,13 +88,14 @@
 
 /* Contact Form Styles */
 .form-container {
+  display: none;
+
   position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -250px;
   margin-left: -300px;
   padding: 20px;
-  display: block;
 
   font-family: var(--font-family);
   background: var(--bg-primary);
@@ -156,7 +157,7 @@
   }
 
   .header-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
 
     position: absolute;
@@ -187,6 +188,25 @@
 
   .callback {
     display: block;
+  }
+  .form-container {
+    border: 1px solid black;
+    top: 50%;
+    left: 0%;
+    margin-top: -250px;
+    /* margin-left: -300px; */
+    margin: 0;
+    padding: 20px;
+  }
+
+  .contact-form {
+    margin: -15px 0 0 0;
+
+    gap: 10px;
+  }
+  .contact-form input {
+    max-width: 300px;
+    max-height: 40px;
   }
 
   .callback-icon {

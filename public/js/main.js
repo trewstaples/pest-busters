@@ -56,15 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const contactFormBtn = document.querySelector('.contact-form-btn');
-  const closeBtn = document.querySelector('.close-btn');
+  const formCloseBtn = document.querySelector('.close-btn--form');
   const formContainer = document.querySelector('.form-container');
-  formContainer.style.display = 'none';
 
   contactFormBtn.addEventListener('click', () => {
-    formContainer.style.display === 'none' ? (formContainer.style.display = 'block') : (formContainer.style.display = 'none');
+    formContainer.style.display = 'block';
   });
 
-  closeBtn.addEventListener('click', () => {
+  formCloseBtn.addEventListener('click', () => {
     formContainer.style.display = 'none';
   });
 });
@@ -129,4 +128,11 @@ burgerBtn.addEventListener('click', () => {
 });
 burgerCloseBtn.addEventListener('click', () => {
   menu.style.display = 'none';
+});
+
+const callbackBtn = document.querySelector('.callback');
+const formContainer = document.querySelector('.form-container');
+
+callbackBtn.addEventListener('click', () => {
+  formContainer.style.display = 'block';
 });
