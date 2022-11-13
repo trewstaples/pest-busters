@@ -73,7 +73,7 @@ let number = document.getElementById('number');
 let email = document.getElementById('email');
 let message = document.getElementById('message');
 
-/* firstName.addEventListener('input', (evt) => {
+firstName.addEventListener('input', (evt) => {
   const isFirstNameValid = /^[А-ЯЁ ,.'-][а-яё ,.'-]+$/i.test(evt.target.value);
   if (!isFirstNameValid) {
     firstName.reportValidity();
@@ -116,23 +116,35 @@ message.addEventListener('change', (evt) => {
   }
   message.setCustomValidity('');
   message.style.border = 'none';
-}); */
+});
 
 /* Мобильные стили */
-const burgerBtn = document.querySelector('.header__burger');
-const burgerCloseBtn = document.querySelector('.close-btn--burger');
-const menu = document.querySelector('.header-menu');
+if (window.matchMedia('(max-width: 768px)').matches) {
+  const burgerBtn = document.querySelector('.header__burger');
+  const burgerCloseBtn = document.querySelector('.close-btn--burger');
+  const menu = document.querySelector('.header-menu');
 
-burgerBtn.addEventListener('click', () => {
-  menu.style.display = 'flex';
-});
-burgerCloseBtn.addEventListener('click', () => {
-  menu.style.display = 'none';
-});
+  burgerBtn.addEventListener('click', () => {
+    menu.style.display = 'flex';
+  });
+  burgerCloseBtn.addEventListener('click', () => {
+    menu.style.display = 'none';
+  });
 
-const callbackBtn = document.querySelector('.callback');
-const formContainer = document.querySelector('.form-container');
+  const callbackBtn = document.querySelector('.callback');
+  const formContainer = document.querySelector('.form-container');
 
-callbackBtn.addEventListener('click', () => {
-  formContainer.style.display = 'block';
-});
+  callbackBtn.addEventListener('click', () => {
+    formContainer.style.display = 'block';
+  });
+
+  const subMenuBtn = document.querySelectorAll('.footer-item--mobile');
+
+  subMenuBtn.forEach((btn) => {
+    const subMenuList = btn.querySelector('ul');
+    subMenuList.style.display = 'none';
+    btn.addEventListener('click', () => {
+      subMenuList.style.display === 'none' ? (subMenuList.style.display = 'flex') : (subMenuList.style.display = 'none');
+    });
+  });
+}
