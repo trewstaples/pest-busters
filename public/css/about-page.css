@@ -153,7 +153,6 @@
   .header-content__wrap {
     padding: 0 15px;
     justify-content: space-between;
-    border: 1px solid greenyellow;
   }
 
   .header-menu {
@@ -171,7 +170,6 @@
     padding: 20px 10px;
     width: 100%;
     background-color: var(--bg-primary);
-    border: 1px solid green;
     z-index: 1;
   }
 
