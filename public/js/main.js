@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const formCloseBtn = document.querySelector('.close-btn--form');
   const formContainer = document.querySelector('.form-container');
 
-  contactFormBtn.addEventListener('click', () => {
+  contactFormBtn.addEventListener('touchend', () => {
     formContainer.style.display = 'block';
   });
 
-  formCloseBtn.addEventListener('click', () => {
+  formCloseBtn.addEventListener('touchend', () => {
     formContainer.style.display = 'none';
   });
 });
@@ -115,10 +115,10 @@ if (window.matchMedia('(max-width: 1312px)').matches) {
   const burgerBtn = document.querySelector('.header__burger');
   const burgerCloseBtn = document.querySelector('.close-btn--burger');
 
-  burgerBtn.addEventListener('click', () => {
+  burgerBtn.addEventListener('touchend', () => {
     menu.style.display = 'flex';
   });
-  burgerCloseBtn.addEventListener('click', () => {
+  burgerCloseBtn.addEventListener('touchend', () => {
     menu.style.display = 'none';
   });
 

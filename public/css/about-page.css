@@ -23,7 +23,7 @@
 
 .header-logo {
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .header-logo__sign {
@@ -61,7 +61,7 @@
 
 .first-screen__info {
   padding: 50px 50px;
-  max-width: 550px;
+  max-width: 650px;
 
   font-family: var(--font-family);
   background: rgba(0, 0, 0, 0.6);
@@ -244,6 +244,11 @@
 @media (max-width: 768px) {
   .first-screen {
     border-radius: 0;
+  }
+
+  .header-logo__image {
+    width: 60px;
+    height: 60px;
   }
 
   .first-screen__info {
