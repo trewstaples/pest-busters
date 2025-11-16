@@ -1,141 +1,201 @@
-'use strict';
+'use strict'
 
-const ANCHORS = ['about', 'services', 'entities', 'individuals', 'portfolio', 'footer'];
-const HEADER_HEIGHT = 110;
+// === ЭЛЕМЕНТЫ ===
+const menu = document.getElementById('header-menu')
+const burgerBtn = document.getElementById('burger-btn')
+const closeBtn = document.getElementById('close-burger')
+const overlay = document.getElementById('menu-overlay')
 
-const scrollT0 = (el) => {
-  window.scroll({
-    top: el.offsetTop - HEADER_HEIGHT,
-    behavior: 'smooth',
-  });
-};
+// === ОТКРЫТИЕ МЕНЮ ===
+function openMenu() {
+  if (!menu) return
 
-const servicesItem = document.getElementById('entities');
-const menu = document.querySelector('.header-menu');
+  // Открываем меню
+  menu.classList.remove('-right-full')
+  menu.classList.add('right-0')
 
-const scrollToChapter = (hrefElement) => {
-  const anchorElement = document.querySelectorAll(`a[href*="#${hrefElement}"]`);
-  const anchorChapter = document.getElementById(`${hrefElement}`);
+  // Показываем overlay
+  if (overlay) {
+    overlay.classList.remove('invisible', 'opacity-0')
+    overlay.classList.add('visible', 'opacity-100')
+  }
 
-  anchorElement.forEach((anchor) => {
-    anchor.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      scrollT0(anchorChapter);
-      if (window.matchMedia('(max-width: 1312px)').matches) {
-        menu.style.display = 'none';
+  // Блокируем прокрутку страницы
+  document.body.style.overflow = 'hidden'
+}
+
+// === ЗАКРЫТИЕ МЕНЮ ===
+function closeMenu() {
+  if (!menu) return
+
+  // Закрываем меню
+  menu.classList.remove('right-0')
+  menu.classList.add('-right-full')
+
+  // Скрываем overlay
+  if (overlay) {
+    overlay.classList.remove('visible', 'opacity-100')
+    overlay.classList.add('invisible', 'opacity-0')
+  }
+
+  // Возвращаем прокрутку страницы
+  document.body.style.overflow = ''
+}
+
+// === СОБЫТИЯ ===
+// Клик по кнопке бургера - открыть меню
+if (burgerBtn) {
+  burgerBtn.addEventListener('click', openMenu)
+}
+
+// Клик по крестику - закрыть меню
+if (closeBtn) {
+  closeBtn.addEventListener('click', closeMenu)
+}
+
+// Клик по overlay - закрыть меню
+if (overlay) {
+  overlay.addEventListener('click', closeMenu)
+}
+
+// === ПЛАВНАЯ ПРОКРУТКА К ЯКОРЯМ ===
+const anchors = ['about', 'services', 'entities', 'individuals', 'portfolio', 'footer']
+const headerHeight = 110
+
+anchors.forEach(anchor => {
+  const links = document.querySelectorAll(`a[href="#${anchor}"]`)
+  const section = document.getElementById(anchor)
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault()
+
+      // Плавная прокрутка
+      if (section) {
+        window.scroll({
+          top: section.offsetTop - headerHeight,
+          behavior: 'smooth',
+        })
       }
-    });
-  });
-};
 
-ANCHORS.forEach((anchor) => scrollToChapter(anchor));
-
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('.contact-form');
-
-  form.addEventListener('submit', formSend);
-
-  async function formSend(e) {
-    e.preventDefault();
-
-    let error = 0;
-
-    let formData = new FormData(form);
-
-    if (error === 0) {
-      let response = await fetch('sendmail.php', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-      } else {
-        alert('Ошибка');
-        console.log(response);
+      // Закрываем меню на мобильных после клика
+      if (window.innerWidth < 768) {
+        closeMenu()
       }
+    })
+  })
+})
+
+// === ЗАКРЫТИЕ МЕНЮ ПО ESC ===
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && menu.classList.contains('right-0')) {
+    closeMenu()
+  }
+})
+
+// === МОДАЛЬНОЕ ОКНО ===
+const modal = document.getElementById('consultationModal')
+const openModalEntitiesBtn = document.getElementById('openModalEntities')
+const openModalIndividualsBtn = document.getElementById('openModalIndividuals')
+const closeModalBtn = document.getElementById('closeModal')
+const consultationForm = document.getElementById('consultationForm')
+const formStatus = document.getElementById('formStatus')
+
+// Функция открытия модального окна
+function openModal() {
+  if (modal) {
+    modal.classList.remove('hidden')
+    modal.classList.add('flex')
+    document.body.style.overflow = 'hidden'
+  }
+}
+
+// Функция закрытия модального окна
+function closeModal() {
+  if (modal) {
+    modal.classList.remove('flex')
+    modal.classList.add('hidden')
+    document.body.style.overflow = ''
+    // Скрываем статус при закрытии
+    if (formStatus) {
+      formStatus.classList.add('hidden')
     }
   }
+}
 
-  const contactFormBtn = document.querySelector('.contact-form-btn');
-  const formCloseBtn = document.querySelector('.close-btn--form');
-  const formContainer = document.querySelector('.form-container');
+// Открытие модального окна по кнопкам
+if (openModalEntitiesBtn) {
+  openModalEntitiesBtn.addEventListener('click', openModal)
+}
 
-  contactFormBtn.addEventListener('touchend', () => {
-    formContainer.style.display = 'block';
-  });
+if (openModalIndividualsBtn) {
+  openModalIndividualsBtn.addEventListener('click', openModal)
+}
 
-  formCloseBtn.addEventListener('touchend', () => {
-    formContainer.style.display = 'none';
-  });
-});
+// Закрытие модального окна
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', closeModal)
+}
 
-let firstName = document.getElementById('name');
-let number = document.getElementById('number');
-let email = document.getElementById('email');
-let message = document.getElementById('message');
+// Закрытие по клику вне модального окна
+if (modal) {
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      closeModal()
+    }
+  })
+}
 
-firstName.addEventListener('input', (evt) => {
-  const isFirstNameValid = /^[А-ЯЁ ,.'-][а-яё ,.'-]+$/i.test(evt.target.value);
-  if (!isFirstNameValid) {
-    firstName.reportValidity();
-    firstName.style.border = '3px solid red';
-    return;
+// Закрытие по ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+    closeModal()
   }
-  firstName.setCustomValidity('');
-  firstName.style.border = 'none';
-});
+})
 
-number.addEventListener('input', (evt) => {
-  const isNumberValid = /^((\+7|7|8)+([0-9]){10})$/.test(evt.target.value);
-  if (!isNumberValid) {
-    number.reportValidity();
-    number.style.border = '3px solid red';
-    return;
-  }
-  number.style.border = 'none';
-  number.setCustomValidity('');
-});
+// === ОТПРАВКА ФОРМЫ ===
+if (consultationForm) {
+  consultationForm.addEventListener('submit', async e => {
+    e.preventDefault()
 
-email.addEventListener('input', (evt) => {
-  const isEmailValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(evt.target.value);
-  if (!isEmailValid) {
-    email.reportValidity();
-    email.style.border = '3px solid red';
-    return;
-  }
-  email.setCustomValidity('');
-  email.style.border = 'none';
-});
+    // Получаем данные формы
+    const formData = new FormData(consultationForm)
 
-/* Мобильные стили */
-if (window.matchMedia('(max-width: 1312px)').matches) {
-  const burgerBtn = document.querySelector('.header__burger');
-  const burgerCloseBtn = document.querySelector('.close-btn--burger');
+    // Показываем статус отправки
+    formStatus.classList.remove('hidden', 'text-green-600', 'text-red-600')
+    formStatus.classList.add('text-gray-600')
+    formStatus.textContent = 'Отправка...'
 
-  burgerBtn.addEventListener('touchend', () => {
-    menu.style.display = 'flex';
-  });
-  burgerCloseBtn.addEventListener('touchend', () => {
-    menu.style.display = 'none';
-  });
+    try {
+      // Отправляем форму
+      const response = await fetch('sendmail.php', {
+        method: 'POST',
+        body: formData,
+      })
 
-  const callbackBtn = document.querySelector('.callback');
-  const formContainer = document.querySelector('.form-container');
+      const result = await response.json()
 
-  callbackBtn.addEventListener('click', () => {
-    formContainer.style.display = 'block';
-  });
+      // Показываем результат
+      if (result.message === 'Данные отправлены') {
+        formStatus.classList.remove('text-gray-600')
+        formStatus.classList.add('text-green-600', 'font-bold')
+        formStatus.textContent = '✓ Заявка успешно отправлена!'
 
-  const subMenuBtn = document.querySelectorAll('.footer-item--mobile');
+        // Очищаем форму
+        consultationForm.reset()
 
-  subMenuBtn.forEach((btn) => {
-    const subMenuList = btn.querySelector('ul');
-    subMenuList.style.display = 'none';
-    btn.addEventListener('click', () => {
-      subMenuList.style.display === 'none' ? (subMenuList.style.display = 'flex') : (subMenuList.style.display = 'none');
-    });
-  });
+        // Закрываем модальное окно через 2 секунды
+        setTimeout(() => {
+          closeModal()
+        }, 2000)
+      } else {
+        throw new Error('Ошибка отправки')
+      }
+    } catch (error) {
+      formStatus.classList.remove('text-gray-600')
+      formStatus.classList.add('text-red-600', 'font-bold')
+      formStatus.textContent = '✗ Ошибка отправки. Попробуйте позже.'
+      console.error('Ошибка:', error)
+    }
+  })
 }

@@ -5,7 +5,8 @@
     "swiper": "^8.4.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "tailwindcss": "^4.1.17"
   },
   "name": "pest-busters",
   "version": "1.0.0",

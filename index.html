@@ -1,462 +1,845 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="keywords"
-      content="Дезинфекция, дезинфекция, дератизация, акарицидная обработка, санитарный аудит, санитарно-эпидемиологическое обеследование, D3, d3 company, d3-company"
-    />
+    <meta name="keywords" content="Дезинфекция, дезинфекция, дератизация, акарицидная обработка, санитарный аудит, санитарно-эпидемиологическое обеследование, D3, d3 company, d3-company" />
     <meta
       name="description"
       content="Наша фирма уже 6 лет успешно реализует работы по дезинфекции, дезинсекции и дератизации помещений. Работаем как с юридическими, так и с физическими лицами. Гарантия для клиентов 100% результата в борьбе с насекомыми, грызунами, бактериями и вирусами."
     />
 
-    <link rel="stylesheet" href="public/css/main.css" />
-    <link rel="stylesheet" href="public/css/about-page.css" />
-    <link rel="stylesheet" href="public/css/services.css" />
-    <link rel="stylesheet" href="public/css/individuals.css" />
-    <link rel="stylesheet" href="public/css/entities.css" />
-    <link rel="stylesheet" href="public/css/portfolio.css" />
-    <link rel="stylesheet" href="public/css/reviews.css" />
-    <link rel="stylesheet" href="public/css/footer.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-primary': '#015289',
+              'blue-hover': '#013d66',
+              'text-dark': '#333333',
+              'text-light': '#666666',
+            },
+          },
+        },
+      }
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
     <title>D3 - дезинфекция</title>
   </head>
 
-  <body>
-    <div class="about-page" id="about">
-      <header class="header">
-        <div class="screen header__screen">
-          <div class="container header__container">
-            <div class="header-content__wrap flex">
-              <div class="header-logo flex">
-                <img src="./public/img/logo.svg" width="100" height="100" alt="Логотип компании" class="header-logo__image" />
-                <div class="header-logo__sign flex">
-                  <p>Дезинфекция</p>
-                  <p>Дезинсекция</p>
-                  <p>Дератизация</p>
-                </div>
-              </div>
-
-              <div class="header-menu">
-                <button class="close-btn close-btn--burger">+</button>
-                <nav class="menu">
-                  <ul class="menu-list flex">
-                    <li class="menu-list__item"><a href="#about" class="menu-list__item-href">О нас</a></li>
-                    <li class="menu-list__item"><a href="#services" class="menu-list__item-href">Услуги</a></li>
-                    <li class="menu-list__item"><a href="#entities" class="menu-list__item-href">Юр. лица</a></li>
-                    <li class="menu-list__item"><a href="#individuals" class="menu-list__item-href">Физ. лица</a></li>
-                    <li class="menu-list__item"><a href="#portfolio" class="menu-list__item-href">Работы</a></li>
-                    <li class="menu-list__item"><a href="#footer" class="menu-list__item-href">Контакты</a></li>
-                    <li class="menu-list__item contact-form-btn">Кнопка обратного звонка</li>
-                  </ul>
-                </nav>
-              </div>
-
-              <div class="header-mobile flex">
-                <div class="callback">
-                  <img src="/public/img/icons/callback.svg" width="30" height="30" alt="Иконка телефона" class="callback-icon" />
-                </div>
-                <div class="header__burger">
-                  <span></span>
-                </div>
-              </div>
+  <body class="font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif] leading-relaxed text-text-dark bg-white">
+    <header class="bg-white shadow-md sticky top-0 z-[1000]">
+      <div class="max-w-7xl mx-auto px-5 py-3 lg:py-4">
+        <div class="flex justify-between items-center">
+          <!-- Логотип - адаптивный размер -->
+          <div class="flex items-center gap-2 lg:gap-4">
+            <img src="./public/img/logo.svg" alt="Логотип компании" class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
+            <div class="flex flex-col gap-0.5">
+              <p class="text-[10px] sm:text-xs lg:text-sm font-semibold text-blue-primary leading-tight">Дезинфекция</p>
+              <p class="text-[10px] sm:text-xs lg:text-sm font-semibold text-blue-primary leading-tight">Дезинсекция</p>
+              <p class="text-[10px] sm:text-xs lg:text-sm font-semibold text-blue-primary leading-tight">Дератизация</p>
             </div>
           </div>
-        </div>
-      </header>
 
-      <div class="form-container">
-        <button class="close-btn close-btn--form">+</button>
-        <form action="#" class="contact-form">
-          <h2>Форма обратной связи</h2>
-          <input id="name" type="text" name="name" placeholder="Ваше имя" required />
-          <input id="number" type="number" name="number" placeholder="Ваш номер" required />
-          <input id="email" type="email" name="email" placeholder="Ваша почта" required />
-          <textarea id="message" name="message" placeholder="Опишите проблему" cols="30" rows="10" maxlength="500" required></textarea>
-          <button type="submit" class="submit">Отправить сообщение</button>
-        </form>
-      </div>
+          <!-- Десктопное/Планшетное меню (скрыто на мобильных < 768px) -->
+          <nav class="hidden md:block">
+            <ul class="flex gap-4 lg:gap-8 items-center">
+              <li><a href="#about" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">О нас</a></li>
+              <li><a href="#services" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Услуги</a></li>
+              <li><a href="#entities" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Юр. лица</a></li>
+              <li><a href="#individuals" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Физ. лица</a></li>
+              <li><a href="#portfolio" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Работы</a></li>
+              <li><a href="#footer" class="text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Контакты</a></li>
+              <li>
+                <a href="tel:+79500129322" class="flex items-center gap-2 text-sm lg:text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">
+                  <img src="./public/img/icons/callback.svg" width="18" height="18" class="lg:w-5 lg:h-5" alt="Телефон" />
+                  <span>+7 (950) 012-93-22</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-      <div class="screen">
-        <div class="container">
-          <div class="first-screen flex">
-            <div class="first-screen__info">
-              <h1 class="about-heading">О нас</h1>
-              <div class="first-screen__text">
-                <p>
-                  &nbsp; &nbsp; &nbsp; Наша фирма осуществляет свою деятельность с&nbsp;2016 года. Команда квалифицированных сотрудников уже 6 лет
-                  успешно реализует работы по&nbsp;дезинфекции, дезинсекции и&nbsp;дератизации помещений.
-                </p>
-                <p>
-                  &nbsp; &nbsp; &nbsp; Многолетний опыт включает в&nbsp;себя сотрудничество с&nbsp;госучреждениями, такими как детские сады
-                  и&nbsp;школы, а&nbsp;также со&nbsp;сферой общепита: кафе, ресторанами и&nbsp;пекарнями. Помимо этого нам поступают заказы
-                  от&nbsp;сетевых магазинов и&nbsp;многих других организаций и&nbsp;предприятий. Работаем как с&nbsp;юридическими, так
-                  и&nbsp;с&nbsp;физическими лицами.
-                </p>
-                <h2 class="about-heading">Почему именно мы?</h2>
-                <dl class="">
-                  <li>Наличие большого опыта в&nbsp;обработке помещений и&nbsp;уничтожении различных грызунов, насекомых и&nbsp;других паразитов.</li>
-
-                  <li>
-                    Использование современного оборудования и&nbsp;индивидуальных средств защиты. В&nbsp;процессе работ задействуются самые
-                    качественные препараты, представленные на&nbsp;рынке, и&nbsp;эффективные технологии.
-                  </li>
-
-                  <li>
-                    Гарантия для клиентов 100% результата в&nbsp;борьбе с&nbsp;насекомыми, грызунами, болезнетворными бактериями и&nbsp;вирусами.
-                  </li>
-                </dl>
-              </div>
-            </div>
+          <!-- Мобильные элементы (видны только < 768px) -->
+          <div class="flex items-center gap-3 md:hidden">
+            <button id="burger-btn" class="hover:text-blue-primary touch-button flex h-10 w-10 items-center justify-center text-gray-600 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="screen services__wrap">
-      <div class="container">
-        <div class="services" id="services">
-          <h2 class="chapter-heading">Услуги</h2>
-          <ul class="chapter-content services-list">
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading flex">
-                  <img src="./public/img/icons/rat.svg" alt="Иконка мыши" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Дератизация <br /></h3>
+      <!-- Мобильное меню (боковое) -->
+      <div id="header-menu" class="fixed top-0 -right-full w-[75%] max-w-[300px] h-screen bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] transition-[right] duration-300 z-[1500] md:hidden">
+        <button
+          id="close-burger"
+          class="absolute top-4 right-4 w-10 h-10 bg-transparent border-0 text-4xl text-text-dark cursor-pointer rotate-45 transition-all hover:text-blue-primary hover:scale-110 leading-none"
+        >
+          +
+        </button>
+
+        <nav class="mt-16 px-6">
+          <ul class="flex flex-col gap-4">
+            <li><a href="#about" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary border-b border-gray-100">О нас</a></li>
+            <li><a href="#services" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary border-b border-gray-100">Услуги</a></li>
+            <li><a href="#entities" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary border-b border-gray-100">Юр. лица</a></li>
+            <li><a href="#individuals" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary border-b border-gray-100">Физ. лица</a></li>
+            <li><a href="#portfolio" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary border-b border-gray-100">Работы</a></li>
+            <li><a href="#footer" class="block py-2 text-base no-underline text-text-dark font-medium transition-colors hover:text-blue-primary">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Overlay для закрытия меню кликом вне его -->
+      <div id="menu-overlay" class="fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-[1400] md:hidden"></div>
+    </header>
+
+    <!-- Секция "Почему именно мы?" -->
+    <section id="about" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Фоновое изображение -->
+      <div class="absolute inset-0 z-0">
+        <img src="./public/img/des-7.jpg" alt="Профессиональная дезинфекция" class="w-full h-full object-cover" />
+        <!-- Темный оверлей для лучшей читаемости текста -->
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <!-- Контент поверх фото -->
+      <div class="relative z-10 max-w-7xl mx-auto px-5 py-20 lg:py-32">
+        <div class="max-w-4xl mx-auto">
+          <!-- Заголовок -->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-12 lg:mb-16">Почему именно мы?</h2>
+
+          <!-- Список преимуществ -->
+          <ul class="space-y-6 lg:space-y-8">
+            <li class="bg-white/10 backdrop-blur-md p-6 lg:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-blue-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg lg:text-xl">✓</span>
                 </div>
-                <span class="services-item__description">Борьба с&nbsp;грызунами: крысы, мыши <nobr>и т. д.</nobr></span>
+                <p class="text-white text-base lg:text-lg leading-relaxed">Наличие большого опыта в обработке помещений и уничтожении различных грызунов, насекомых и других паразитов.</p>
               </div>
             </li>
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading flex">
-                  <img src="./public/img/icons/insect.svg" alt="Иконка насекомых" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Дезинсекция <br /></h3>
+
+            <li class="bg-white/10 backdrop-blur-md p-6 lg:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-blue-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg lg:text-xl">✓</span>
                 </div>
-                <span class="services-item__description">Борьба с&nbsp;насекомыми: тараканы, клопы, блохи, мухи <nobr>и т. д.</nobr></span>
+                <p class="text-white text-base lg:text-lg leading-relaxed">
+                  Использование современного оборудования и индивидуальных средств защиты. В процессе работ задействуются самые качественные препараты, представленные на рынке, и эффективные
+                  технологии.
+                </p>
               </div>
             </li>
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading flex">
-                  <img src="./public/img/icons/bacterium.svg" alt="Иконка бактерии" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Дезинфекция <br /></h3>
+
+            <li class="bg-white/10 backdrop-blur-md p-6 lg:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-blue-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg lg:text-xl">✓</span>
                 </div>
-                <span class="services-item__description">
-                  Ликвидация источника заражения и&nbsp;уничтожение всех болезнетворных бактерий, вирусов, микробов</span
-                >
-              </div>
-            </li>
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading flex">
-                  <img src="./public/img/icons/mite.svg" alt="Иконка клеща" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Акарицидная обработка <br /></h3>
-                </div>
-                <span class="services-item__description">Борьба с&nbsp;клещами</span>
-              </div>
-            </li>
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading flex">
-                  <img src="./public/img/icons/research.svg" alt="Иконка обработки" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Санитарно-эпидемиологическое обследование <br /></h3>
-                </div>
-                <span class="services-item__description">
-                  Мероприятие, устанавливающее соответствие или несоответствие требованиям государственных
-                  <nobr>санитарно-эпидемиологических</nobr> правил
-                </span>
-              </div>
-            </li>
-            <li class="services-list__item">
-              <div class="services-item">
-                <div class="services-item__heading">
-                  <img src="./public/img/icons/audit.svg" alt="Иконка аудита" class="services-item-icon" />
-                  <h3 class="services-item__heading-text">Санитарный аудит</h3>
-                </div>
-                <span class="services-item__description">
-                  <nobr>Санитарно-эпидемиологический</nobr> аудит способствует выявлению и&nbsp;устранению несоответствий действующему санитарному
-                  законодательству еще до&nbsp;их&nbsp;проведения
-                </span>
+                <p class="text-white text-base lg:text-lg leading-relaxed">Гарантия для клиентов 100% результата в борьбе с насекомыми, грызунами, болезнетворными бактериями и вирусами.</p>
               </div>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="screen entities__wrap" id="entities">
-      <div class="container">
-        <h2 class="chapter-heading">Работа с юридическими лицами</h2>
-        <div class="entities chapter-content flex">
-          <div class="entities__main flex">
-            <h3 class="entities__work-heading"><b>Обработка коммерческих помещений</b></h3>
-            <table class="entities__table">
+    <!-- Секция "Услуги" -->
+    <section id="services" class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div class="max-w-7xl mx-auto px-5">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">Услуги</h2>
+        <div class="w-24 h-1 mx-auto mb-12 lg:mb-16 rounded-full"></div>
+
+        <!-- Сетка карточек услуг -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Карточка 1: Дератизация -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/rat.svg"
+                  alt="Дератизация"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Дератизация</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">Борьба с грызунами: крысы, мыши и т. д.</p>
+            </div>
+          </div>
+
+          <!-- Карточка 2: Дезинсекция -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/insect.svg"
+                  alt="Дезинсекция"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Дезинсекция</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">Борьба с насекомыми: тараканы, клопы, блохи, мухи и т. д.</p>
+            </div>
+          </div>
+
+          <!-- Карточка 3: Дезинфекция -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/bacterium.svg"
+                  alt="Дезинфекция"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Дезинфекция</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">Ликвидация источника заражения и уничтожение всех болезнетворных бактерий, вирусов, микробов</p>
+            </div>
+          </div>
+
+          <!-- Карточка 4: Акарицидная обработка -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/mite.svg"
+                  alt="Акарицидная обработка"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Акарицидная обработка</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">Борьба с клещами</p>
+            </div>
+          </div>
+
+          <!-- Карточка 5: Санитарно-эпидемиологическое обследование -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/research.svg"
+                  alt="Санитарно-эпидемиологическое обследование"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Санитарно-эпидемиологическое обследование</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">
+                Мероприятие, устанавливающее соответствие или несоответствие требованиям государственных санитарно-эпидемиологических правил
+              </p>
+            </div>
+          </div>
+
+          <!-- Карточка 6: Санитарный аудит -->
+          <div class="group bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-primary hover:-translate-y-2">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 mb-6 p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center">
+                <img
+                  src="./public/img/icons/audit.svg"
+                  alt="Санитарный аудит"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Заголовок -->
+              <h3 class="text-xl lg:text-2xl text-gray-900 mb-3">Санитарный аудит</h3>
+              <!-- Описание -->
+              <p class="text-gray-600 text-sm lg:text-base leading-relaxed">
+                Санитарно-эпидемиологический аудит способствует выявлению и устранению несоответствий действующему санитарному законодательству еще до их проведения
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Работа с юридическими лицами" -->
+    <section id="entities" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">Работа с юридическими лицами</h2>
+        <div class="w-24 h-1 mx-auto mb-12 lg:mb-16 rounded-full"></div>
+
+        <!-- Таблица цен -->
+        <div class="mb-12 lg:mb-16">
+          <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 text-center">Обработка коммерческих помещений</h3>
+
+          <div class="max-w-4xl mx-auto overflow-hidden shadow-lg border border-gray-200">
+            <table class="w-full">
+              <!-- Заголовок таблицы -->
               <thead>
-                <th>Помещение</th>
-                <th>Стоимость</th>
+                <tr class="bg-blue-primary text-white">
+                  <th class="px-6 py-4 text-left text-base lg:text-lg font-semibold">Помещение</th>
+                  <th class="px-6 py-4 text-left text-base lg:text-lg font-semibold">Стоимость</th>
+                </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>До 50м<sup>2</sup></td>
-                  <td>2300 р</td>
+              <!-- Тело таблицы -->
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 50м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">2300 р</td>
                 </tr>
-                <tr>
-                  <td>До 100м<sup>2</sup></td>
-                  <td>3300 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 100м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">3300 р</td>
                 </tr>
-                <tr>
-                  <td>До 300 м<sup>2</sup></td>
-                  <td>25 р/м<sup>2</sup></td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 300 м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">25 р/м<sup>2</sup></td>
                 </tr>
-                <tr>
-                  <td>До 500 м<sup>2</sup></td>
-                  <td>20 р/м<sup>2</sup></td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 500 м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">20 р/м<sup>2</sup></td>
                 </tr>
-                <tr>
-                  <td>До 1000 м<sup>2</sup></td>
-                  <td>15 р/м<sup>2</sup></td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 1000 м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">15 р/м<sup>2</sup></td>
                 </tr>
-                <tr>
-                  <td>До 2500 м<sup>2</sup></td>
-                  <td>10 р/м<sup>2</sup></td>
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">До 2500 м<sup>2</sup></td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">10 р/м<sup>2</sup></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="entities__info">
-            <div class="entities__text">
-              <p>Работа с&nbsp;юр. лицами осуществляется по&nbsp;договору.</p>
+        </div>
 
-              <p>
-                <b>
-                  Акция выезд специалиста на&nbsp;обследование, консультацию и&nbsp;составление <nobr>бизнес-плана</nobr>&nbsp;&mdash; БЕСПЛАТНО!
-                </b>
-              </p>
+        <!-- Сетка информационных блоков -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Блок 1: Работа по договору -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/entities/document.svg"
+                  alt="Договор"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">Работа с юр. лицами осуществляется по договору на постоянной основе</p>
+              </div>
+            </div>
+          </div>
 
-              <p>
-                Работаем по&nbsp;договору на&nbsp;постоянной основе. Индивидуально рассчитываем цену, обговариваем и&nbsp;прописываем условия
-                сотрудничества. Согласно договору, услуги могут быть оказаны один или несколько раз в&nbsp;месяц или квартал.
-              </p>
+          <!-- Блок 2: Акция -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/entities/man.svg"
+                  alt="Специалист"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  <strong>Акция!</strong> Выезд специалиста на обследование, консультацию и составление бизнес-плана — <strong class="text-blue-primary">БЕСПЛАТНО!</strong>
+                </p>
+              </div>
+            </div>
+          </div>
 
-              <p>Проявляем гибкий подход и&nbsp;учитываем все особенности вашего объекта и&nbsp;ситуации.</p>
+          <!-- Блок 3: Индивидуальный подход -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/entities/hand.svg"
+                  alt="Сотрудничество"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  Индивидуально рассчитываем цену, обговариваем и прописываем условия сотрудничества. Согласно договору, услуги могут быть оказаны один или несколько раз в месяц или квартал
+                </p>
+              </div>
+            </div>
+          </div>
 
-              <p>
-                <b>Предоставляем полный пакет документов согласно всем требованиям Роспотребнадзора.</b>
-              </p>
+          <!-- Блок 4: Полный пакет документов -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/entities/all-documents.svg"
+                  alt="Документы"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">Предоставляем полный пакет документов согласно всем требованиям Роспотребнадзора</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="screen individuals__wrap" id="individuals">
-      <div class="container">
-        <h2 class="chapter-heading">Работа с физическими лицами</h2>
-        <div class="individuals chapter-content flex">
-          <div class="individuals__main flex">
-            <h3 class="individuals__work-heading"><b>Обработка жилых помещений</b></h3>
-            <table class="individuals__table">
+        <!-- Кнопка "Получить консультацию" -->
+        <div class="mt-12 text-center">
+          <button
+            id="openModalEntities"
+            class="inline-block bg-blue-primary hover:bg-blue-hover text-white font-bold py-4 px-8 lg:px-12 text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Получить консультацию
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Работа с физическими лицами" -->
+    <section id="individuals" class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div class="max-w-7xl mx-auto px-5">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">Работа с физическими лицами</h2>
+        <div class="w-24 h-1 mx-auto mb-12 lg:mb-16 rounded-full"></div>
+
+        <!-- Таблица цен -->
+        <div class="mb-12 lg:mb-16">
+          <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 text-center">Обработка жилых помещений</h3>
+
+          <div class="max-w-4xl mx-auto overflow-hidden shadow-lg border border-gray-200">
+            <table class="w-full">
+              <!-- Заголовок таблицы -->
               <thead>
-                <th>Помещение</th>
-                <th>Стоимость</th>
+                <tr class="bg-blue-primary text-white">
+                  <th class="px-6 py-4 text-left text-base lg:text-lg font-semibold">Помещение</th>
+                  <th class="px-6 py-4 text-left text-base lg:text-lg font-semibold">Стоимость</th>
+                </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Комната</td>
-                  <td>1800 р</td>
+              <!-- Тело таблицы -->
+              <tbody class="bg-white">
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">Комната</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">1800 р</td>
                 </tr>
-                <tr>
-                  <td>1-комнатная квартира</td>
-                  <td>2500 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">1-комнатная квартира</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">2500 р</td>
                 </tr>
-                <tr>
-                  <td>2-комнатная квартира</td>
-                  <td>3100 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">2-комнатная квартира</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">3100 р</td>
                 </tr>
-                <tr>
-                  <td>3-комнатная квартира</td>
-                  <td>3700 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">3-комнатная квартира</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">3700 р</td>
                 </tr>
-                <tr>
-                  <td>4-комнатная квартира</td>
-                  <td>4300 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">4-комнатная квартира</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">4300 р</td>
                 </tr>
-                <tr>
-                  <td>5-комнатная квартира</td>
-                  <td>4900 р</td>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">5-комнатная квартира</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">4900 р</td>
                 </tr>
-                <tr>
-                  <td>Вагончик-бытовка</td>
-                  <td>1800 р</td>
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 text-gray-900 font-medium">Вагончик-бытовка</td>
+                  <td class="px-6 py-4 text-blue-primary font-bold text-lg">1800 р</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="individuals__info">
-            <div class="individuals__text">
-              <p>Работа с&nbsp;физ.лицами осуществляется следующим образом:</p>
+        </div>
 
-              <dl class="individuals__list">
-                <li>Вы связываетесь с&nbsp;нами по&nbsp;телефону или адересу электронной почты, указанным на&nbsp;сайте.</li>
-                <li>Также Вы&nbsp;можете заказать услугу обратного звонка или заполнить онлайн анкету, чтобы наш специалист с&nbsp;Вами связался.</li>
-                <li>
-                  После подробной консультации Вам будет озвучена стоимость обработки и&nbsp;правила подготовки помещения. Цена не&nbsp;изменится
-                  по&nbsp;приезде мастера в&nbsp;место проведения обработки.
-                </li>
-              </dl>
+        <!-- Сетка информационных блоков -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Блок 1: Связь по телефону -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/physical/phone.svg"
+                  alt="Телефон"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">Вы связываетесь с нами по телефону или адересу электронной почты, указанным на сайте</p>
+              </div>
+            </div>
+          </div>
 
-              <p>
-                <b> При соблюдении всех рекомендаций перед, во&nbsp;время и&nbsp;после обработки мы&nbsp;даём полную гарантию на&nbsp;наши услуги!</b>
+          <!-- Блок 2: Обратный звонок -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/physical/pencil.svg"
+                  alt="Анкета"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">Также Вы можете заказать услугу обратного звонка или заполнить онлайн анкету, чтобы наш специалист с Вами связался</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Блок 3: Консультация и цена -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/physical/lab.svg"
+                  alt="Консультация"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  После подробной консультации Вам будет озвучена стоимость обработки и правила подготовки помещения. Цена не изменится по приезде мастера в место проведения обработки
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Блок 4: Гарантия -->
+          <div class="group bg-gray-50 p-6 lg:p-8 border border-gray-200 hover:border-blue-primary hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-3">
+                <img
+                  src="./public/img/physical/shield.svg"
+                  alt="Гарантия"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <div class="flex-1">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  <strong>При соблюдении всех рекомендаций</strong> перед, во время и после обработки мы даём <strong class="text-blue-primary">полную гарантию</strong> на наши услуги!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Кнопка "Получить консультацию" -->
+        <div class="mt-12 text-center">
+          <button
+            id="openModalIndividuals"
+            class="inline-block bg-blue-primary hover:bg-blue-hover text-white font-bold py-4 px-8 lg:px-12 text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Получить консультацию
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "Способы оплаты" -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">Способы оплаты</h2>
+        <div class="w-24 h-1 mx-auto mb-12 lg:mb-16 rounded-full"></div>
+
+        <!-- Сетка блоков оплаты -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <!-- Блок 1: Банковской картой -->
+          <div class="group bg-gradient-to-br from-blue-50 to-white p-8 border border-gray-200 hover:border-blue-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-4 mb-6 shadow-lg">
+                <img
+                  src="./public/img/finances/credit-card.svg"
+                  alt="Банковская карта"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Текст -->
+              <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Банковской картой</h3>
+              <p class="text-gray-600 text-sm">Принимаем все виды карт</p>
+            </div>
+          </div>
+
+          <!-- Блок 2: Наличными -->
+          <div class="group bg-gradient-to-br from-blue-50 to-white p-8 border border-gray-200 hover:border-blue-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-4 mb-6 shadow-lg">
+                <img
+                  src="./public/img/finances/banknotes.svg"
+                  alt="Наличные"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Текст -->
+              <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Наличными</h3>
+              <p class="text-gray-600 text-sm">Оплата мастеру на месте</p>
+            </div>
+          </div>
+
+          <!-- Блок 3: Безналичный расчёт -->
+          <div class="group bg-gradient-to-br from-blue-50 to-white p-8 border border-gray-200 hover:border-blue-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="flex flex-col items-center text-center">
+              <!-- Иконка -->
+              <div class="w-20 h-20 bg-blue-50 group-hover:bg-blue-primary transition-colors duration-300 flex items-center justify-center p-4 mb-6 shadow-lg">
+                <img
+                  src="./public/img/finances/document-check.svg"
+                  alt="Безналичный расчёт"
+                  class="w-full h-full object-contain [filter:invert(16%)_sepia(78%)_saturate(1897%)_hue-rotate(185deg)_brightness(94%)_contrast(101%)] group-hover:[filter:brightness(0)_invert(1)]"
+                />
+              </div>
+              <!-- Текст -->
+              <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Безналичный расчёт</h3>
+              <p class="text-gray-600 text-sm">По договору для юр. лиц</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция "О нас" -->
+    <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">О нас</h2>
+        <div class="w-24 h-1 mx-auto mb-12 lg:mb-16 rounded-full"></div>
+
+        <!-- Контент -->
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white shadow-xl p-8 lg:p-12 border border-gray-200">
+            <!-- Текстовые блоки -->
+            <div class="space-y-6">
+              <p class="text-gray-700 text-lg lg:text-xl leading-relaxed">
+                Наша фирма осуществляет свою деятельность с <strong class="text-blue-primary">2016 года</strong>. Команда квалифицированных сотрудников уже
+                <strong class="text-blue-primary">6 лет</strong> успешно реализует работы по дезинфекции, дезинсекции и дератизации помещений.
+              </p>
+
+              <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+
+              <p class="text-gray-700 text-lg lg:text-xl leading-relaxed">
+                Многолетний опыт включает в себя сотрудничество с госучреждениями, такими как детские сады и школы, а также со сферой общепита: кафе, ресторанами и пекарнями. Помимо этого нам
+                поступают заказы от сетевых магазинов и многих других организаций и предприятий. Работаем как с юридическими, так и с физическими лицами.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="screen portfolio__wrap" id="portfolio">
-      <div class="container portfolio-container">
-        <div class="portfolio flex">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-1.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-2.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-10.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-4.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-12.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-about.jpeg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-7.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-8.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-11.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-5.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
+    <!-- Секция "Галерея работ" -->
+    <section id="portfolio" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-5 mb-12 lg:mb-16">
+        <!-- Заголовок секции -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-primary text-center mb-4">Галерея работ</h2>
+        <div class="w-24 h-1 mx-auto rounded-full"></div>
+      </div>
 
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-9.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-3.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-14.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="portfolio-photo__wrap">
-                  <img src="./public/img/des-13.jpg" alt="Фото работ" class="portfolio-photo" />
-                </div>
-              </div>
+      <!-- Swiper на всю ширину -->
+      <div class="swiper mySwiper w-full">
+        <div class="swiper-wrapper mb-16">
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-1.jpg" alt="Фото работ" class="w-full h-full object-cover" />
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-2.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-10.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-4.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-12.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-about.jpeg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-7.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-8.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-11.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-5.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-9.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-3.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-14.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex !items-center !justify-center">
+            <div class="w-full h-[400px] lg:h-[500px] overflow-hidden">
+              <img src="./public/img/des-13.jpg" alt="Фото работ" class="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
+        <div class="swiper-button-next !text-blue-primary"></div>
+        <div class="swiper-button-prev !text-blue-primary"></div>
+        <div class="swiper-pagination"></div>
       </div>
-    </div>
+    </section>
 
-    <footer class="footer" id="footer">
-      <div class="screen footer__screen">
-        <div class="container footer__container">
-          <div class="footer__wrap flex">
-            <div class="footer-logo footer__item">
-              <img src="./public/img/logo.svg" width="140" height="140" alt="Логотип фирмы" class="footer-logo__icon" />
-            </div>
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 text-white py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <!-- Колонка 1: Услуги -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-white">Услуги</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Дератизация
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Дезинсекция
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Дезинфекция
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Акарицидная обработка
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Санитарно-эпидемиологическое обследование
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Санитарный аудит
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            <div class="footer-services__wrap footer__item footer-item--mobile">
-              <h3 class="footer-heading">Уcлуги</h3>
-              <span class="footer-arrow arrow"></span>
-              <ul class="footer-services flex">
-                <li class="footer-services__item"><a href="#services" class="footer-menu__item-href">Дератизация</a></li>
-                <li class="footer-services__item"><a href="#services" class="footer-menu__item-href">Дезинсекция</a></li>
-                <li class="footer-services__item"><a href="#services" class="footer-menu__item-href">Дезинфекция</a></li>
-                <li class="footer-services__item"><a href="#services" class="footer-menu__item-href">Акарицидная обработка</a></li>
-                <li class="footer-services__item">
-                  <a href="#services" class="footer-menu__item-href">Санитарно-эпидемиологическое обследование</a>
-                </li>
-                <li class="footer-services__item"><a href="#services" class="footer-menu__item-href">Санитарный аудит</a></li>
-              </ul>
-            </div>
+          <!-- Колонка 2: Меню -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-white">Меню</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Услуги
+                </a>
+              </li>
+              <li>
+                <a href="#entities" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Юр. лица
+                </a>
+              </li>
+              <li>
+                <a href="#individuals" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Физ. лица
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2">
+                  <span class="text-blue-primary">→</span>
+                  Работы
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            <div class="footer-menu__wrap footer__item footer-item--mobile">
-              <h3 class="footer-heading">Меню</h3>
-              <span class="footer-arrow arrow"></span>
-              <ul class="footer-menu flex">
-                <li class="footer-menu__item"><a href="#about" class="footer-menu__item-href">О нас</a></li>
-                <li class="footer-menu__item"><a href="#services" class="footer-menu__item-href">Услуги</a></li>
-                <li class="footer-menu__item"><a href="#entities" class="footer-menu__item-href">Юр. Лица</a></li>
-                <li class="footer-menu__item"><a href="#individuals" class="footer-menu__item-href">Физ. Лица</a></li>
-                <li class="footer-menu__item"><a href="#portfolio" class="footer-menu__item-href">Работы</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-payment__wrap footer__item footer-item--mobile">
-              <h3 class="footer-heading">Способ оплаты</h3>
-              <span class="footer-arrow arrow"></span>
-              <ul class="footer-payment flex">
-                <li class="footer-payment__item">Банковской картой</li>
-                <li class="footer-payment__item">Наличными</li>
-                <li class="footer-payment__item">Безналичный расчёт по договору</li>
-              </ul>
-            </div>
-
-            <div class="footer-contacts__wrap footer__item footer-item--mobile" id="contacts">
-              <h3 class="footer-heading">Контакты</h3>
-              <span class="footer-arrow arrow"></span>
-              <ul class="footer-contacts flex">
-                <li class="footer-contacts__item"><a href="tel:+79500129322" style="color: white">+7 (950) 012-93-22</a></li>
-                <li class="footer-contacts__item">г.Санкт-Петербург</li>
-                <li class="footer-contacts__item"><a href="mailto:d3dezinfektor@mail.ru" style="color: white">d3dezinfektor@mail.ru</a></li>
-              </ul>
-            </div>
+          <!-- Колонка 3: Контакты -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-white">Контакты</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-primary flex-shrink-0 mt-0.5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                  />
+                </svg>
+                <a href="tel:+79500129322" class="text-gray-300 hover:text-white transition-colors duration-300"> +7 (950) 012-93-22 </a>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-primary flex-shrink-0 mt-0.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                </svg>
+                <span class="text-gray-300">г. Санкт-Петербург</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-primary flex-shrink-0 mt-0.5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                  />
+                </svg>
+                <a href="mailto:d3dezinfektor@mail.ru" class="text-gray-300 hover:text-white transition-colors duration-300 break-all"> d3dezinfektor@mail.ru </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -478,7 +861,7 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
-        });
+        })
       } else {
         var swiper = new Swiper('.mySwiper', {
           slidesPerView: 4,
@@ -492,8 +875,74 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
-        });
+        })
       }
     </script>
+
+    <!-- Модальное окно с формой -->
+    <div id="consultationModal" class="fixed inset-0 bg-black/50 z-[2000] hidden items-center justify-center p-4">
+      <div class="bg-white max-w-md w-full p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+        <!-- Кнопка закрытия -->
+        <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+
+        <!-- Заголовок -->
+        <h3 class="text-2xl lg:text-3xl font-bold text-blue-primary mb-6 text-center">Получить консультацию</h3>
+
+        <!-- Форма -->
+        <form id="consultationForm" class="space-y-4">
+          <!-- Имя -->
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">Имя *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 border border-gray-300 focus:border-blue-primary focus:outline-none transition-colors"
+              placeholder="Введите ваше имя"
+            />
+          </div>
+
+          <!-- Номер -->
+          <div>
+            <label for="number" class="block text-gray-700 font-medium mb-2">Номер телефона *</label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              required
+              class="w-full px-4 py-3 border border-gray-300 focus:border-blue-primary focus:outline-none transition-colors"
+              placeholder="+7 (___) ___-__-__"
+            />
+          </div>
+
+          <!-- Почта -->
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 focus:border-blue-primary focus:outline-none transition-colors" placeholder="example@mail.ru" />
+          </div>
+
+          <!-- Сообщение -->
+          <div>
+            <label for="message" class="block text-gray-700 font-medium mb-2">Сообщение</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-4 py-3 border border-gray-300 focus:border-blue-primary focus:outline-none transition-colors resize-none"
+              placeholder="Напишите ваше сообщение..."
+            ></textarea>
+          </div>
+
+          <!-- Кнопка отправки -->
+          <button type="submit" class="w-full bg-blue-primary hover:bg-blue-hover text-white font-bold py-4 px-6 transition-colors duration-300 shadow-lg hover:shadow-xl">Отправить заявку</button>
+
+          <!-- Статус отправки -->
+          <div id="formStatus" class="hidden text-center py-2"></div>
+        </form>
+      </div>
+    </div>
   </body>
+
+  <script src="./public/js/main.js"></script>
 </html>
